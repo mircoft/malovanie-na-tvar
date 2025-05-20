@@ -1,0 +1,12 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="60" cy="110" rx="40" ry="10" fill="#e0c3fc" opacity="0.25"/>
+  <ellipse cx="60" cy="70" rx="32" ry="36" fill="#ffe6fa"/>
+  <ellipse cx="60" cy="60" rx="22" ry="24" fill="#fff"/>
+  <ellipse cx="60" cy="60" rx="18" ry="20" fill="#fcd5ce"/>
+  <ellipse cx="54" cy="58" rx="2.5" ry="3.5" fill="#222"/>
+  <ellipse cx="66" cy="58" rx="2.5" ry="3.5" fill="#222"/>
+  <path d="M56 68 Q60 72 64 68" stroke="#e29578" stroke-width="1.5" fill="none"/>
+  <!-- Motýľ na tvári -->
+  <path d="M60 60 Q50 50 60 50 Q70 50 60 60" stroke="#b5e0ff" stroke-width="1.5" fill="#ffe066"/>
+  <circle cx="60" cy="60" r="1.5" fill="#b5e0ff"/>
+</svg> 

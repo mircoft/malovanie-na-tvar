@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Tenký stetec -->
+    <g id="paintbrush">
+        <!-- Rukoväť - tenká -->
+        <path d="M-2,-40 L-2,0 L2,0 L2,-40 Z" fill="#8B4513" transform="rotate(-15)">
+            <!-- Lesk na rukoväti -->
+            <animate attributeName="opacity" values="1;0.9;1" dur="2s" repeatCount="indefinite"/>
+        </path>
+        
+        <!-- Štetina - tenká a jemná -->
+        <path d="M-1,0 Q0,5 1,0 L1,15 Q0,20 -1,15 Z" fill="#FF69B4" transform="rotate(-15)">
+            <animate attributeName="d" 
+                values="M-1,0 Q0,5 1,0 L1,15 Q0,20 -1,15 Z;
+                        M-1,0 Q0,8 1,0 L1,15 Q0,23 -1,15 Z;
+                        M-1,0 Q0,5 1,0 L1,15 Q0,20 -1,15 Z"
+                dur="1s" 
+                repeatCount="indefinite"/>
+        </path>
+        
+        <!-- Špička stetca -->
+        <path d="M-0.5,15 L0.5,15 L0,20 Z" fill="#FF1493" transform="rotate(-15)">
+            <animate attributeName="opacity" values="0.8;1;0.8" dur="0.8s" repeatCount="indefinite"/>
+        </path>
+    </g>
+
+    <!-- Cesta pohybu - písanie -->
+    <path id="writingPath" d="M-80,-20 C-60,-40 -40,-20 -20,-40 C0,-20 20,-40 40,-20 C60,-40 80,-20 100,-40" fill="none" stroke="none"/>
+    
+    <!-- Animácia pohybu stetca -->
+    <use href="#paintbrush">
+        <animateMotion 
+            dur="6s" 
+            repeatCount="indefinite"
+            path="M-80,-20 C-60,-40 -40,-20 -20,-40 C0,-20 20,-40 40,-20 C60,-40 80,-20 100,-40"
+            rotate="auto">
+            <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite"/>
+        </animateMotion>
+    </use>
+
+    <!-- Dekoratívne prvky - hviezdičky -->
+    <g>
+        <!-- Hviezdička 1 -->
+        <path d="M-60,-30 L-58,-25 L-55,-30 L-58,-35 L-60,-30 Z" fill="#FF69B4" opacity="0">
+            <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite" begin="0s"/>
+            <animate attributeName="transform" values="scale(0.5);scale(1);scale(1);scale(0.5)" dur="6s" repeatCount="indefinite" begin="0s"/>
+        </path>
+        <!-- Hviezdička 2 -->
+        <path d="M-20,-20 L-18,-15 L-15,-20 L-18,-25 L-20,-20 Z" fill="#FF1493" opacity="0">
+            <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite" begin="1s"/>
+            <animate attributeName="transform" values="scale(0.5);scale(1);scale(1);scale(0.5)" dur="6s" repeatCount="indefinite" begin="1s"/>
+        </path>
+        <!-- Hviezdička 3 -->
+        <path d="M20,-30 L22,-25 L25,-30 L22,-35 L20,-30 Z" fill="#FF69B4" opacity="0">
+            <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite" begin="2s"/>
+            <animate attributeName="transform" values="scale(0.5);scale(1);scale(1);scale(0.5)" dur="6s" repeatCount="indefinite" begin="2s"/>
+        </path>
+        <!-- Hviezdička 4 -->
+        <path d="M60,-20 L62,-15 L65,-20 L62,-25 L60,-20 Z" fill="#FF1493" opacity="0">
+            <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite" begin="3s"/>
+            <animate attributeName="transform" values="scale(0.5);scale(1);scale(1);scale(0.5)" dur="6s" repeatCount="indefinite" begin="3s"/>
+        </path>
+    </g>
+
+    <!-- Čiara - efekt maľovania -->
+    <path d="M-80,-20 C-60,-40 -40,-20 -20,-40 C0,-20 20,-40 40,-20 C60,-40 80,-20 100,-40" 
+          fill="none" 
+          stroke="#FF69B4" 
+          stroke-width="2" 
+          stroke-dasharray="200" 
+          stroke-dashoffset="200">
+        <animate attributeName="stroke-dashoffset" 
+                 values="200;0;0;200" 
+                 dur="6s" 
+                 repeatCount="indefinite"/>
+        <animate attributeName="opacity" 
+                 values="0;1;1;0" 
+                 dur="6s" 
+                 repeatCount="indefinite"/>
+    </path>
+</svg> 
