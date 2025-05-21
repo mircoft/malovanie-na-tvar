@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maľovanie na tvár - Premeníme každé dieťa na vílu, tigra alebo superhrdinu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="fairy-container">
+        <img src="images/fairy.svg" alt="Víla" class="fairy-animation">
+        <img src="images/fairy.svg" alt="Víla" class="fairy-animation secondary">
+    </div>
+    <img src="images/decor-dots.svg" alt="Dekoratívne bodky" class="decor decor-dots">
+    <img src="images/decor-stars.svg" alt="Dekoratívne hviezdičky" class="decor decor-stars">
+    <header class="header">
+        <div class="logo">
+            <span class="dot"></span>
+            Maľovanie na tvár
+        </div>
+        <nav>
+            <a href="#about">O mne</a>
+            <a href="#work">Moje práce</a>
+            <a href="#reviews">Recenzie</a>
+            <a href="#pricing">Cenník</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="hero-main-title">Premeníme každé dieťa na vílu, tigra alebo superhrdinu</span>
+                </h1>
+                <p class="hero-description">Profesionálne maľovanie na tvár pre detské oslavy, festivaly a špeciálne príležitosti.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="hero-button">
+                        Objednať maľovanie
+                        <svg class="hero-button-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero.jpg" alt="Maľovanie na tvár" class="hero-image-main">
+                <div class="hero-image-overlay"></div>
+            </div>
+        </div>
+    </section>
+    <main>
+        <section id="about" class="about">
+            <h2>✨ O mne ✨</h2>
+            <div class="about-content">
+                <img src="images/omne.jpg" alt="Sofia" class="o-mne-img">
+                <div class="about-text">
+                    <p>Vitajte v kúzelnom svete maľovania na tvár! Som profesionálna maliarka na tvár s vášňou pre vytváranie úsmevov na detských tvárach. S mojím jemným dotykom a kreatívnym duchom premieňam každé dieťa na jeho obľúbenú postavu.</p>
+                    <p>✨ Používam len najkvalitnejšie, hypoalergénne farby špeciálne vyvinuté pre maľovanie na tvár ✨</p>
+                </div>
+            </div>
+        </section>
+        <section id="work" class="work">
+            <h2>🎨 Moje práce 🎨</h2>
+            <div class="gallery">
+                <img src="images/face1.jpg" alt="Maľovanie na tvár - príklad 1" loading="lazy">
+                <img src="images/face2.jpg" alt="Maľovanie na tvár - príklad 2" loading="lazy">
+            </div>
+            <h3 class="gallery-title">Moje najnovšie práce na Instagrame</h3>
+            <div class="instagram-gallery">
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-h-eUVI4LZ/" data-instgrm-version="14">
+                    <a href="https://www.instagram.com/reel/C-h-eUVI4LZ/"></a>
+                </blockquote>
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-h4iU5oX-J/" data-instgrm-version="14">
+                    <a href="https://www.instagram.com/reel/C-h4iU5oX-J/"></a>
+                </blockquote>
+            </div>
+            <script async src="//www.instagram.com/embed.js"></script>
+        </section>
+        <section id="reviews" class="reviews">
+            <h2>⭐ Recenzie ⭐</h2>
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>"Úžasné maľovanie na tvár! Deti boli nadšené a maľovanie vydržalo celý deň. Profesionálny prístup a krásne výsledky."</p>
+                <cite>- Mária K., Bratislava</cite>
+            </div>
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>"Najlepšia maliarka na tvár, akú sme mali! Deti si to užili a maľovanie bolo nádherne detailné. Určite odporúčam!"</p>
+                <cite>- Jana M., Košice</cite>
+            </div>
+        </section>
+        <section id="pricing" class="pricing">
+            <h2>💰 Cenník 💰</h2>
+            <div class="price-list">
+                <div class="price-item">
+                    <div class="price-content">
+                        <span class="price-amount">15€</span>
+                        <p class="price-description">Jednoduché maľovanie na tvár (do 10 minút)</p>
+                    </div>
+                </div>
+                <div class="price-item">
+                    <div class="price-content">
+                        <span class="price-amount">25€</span>
+                        <p class="price-description">Komplexné maľovanie na tvár (10-20 minút)</p>
+                    </div>
+                </div>
+                <div class="price-item deal-price">
+                    <div class="price-content">
+                        <span class="price-amount">150€</span>
+                        <p class="price-description">Maľovanie na detskej oslave (do 2 hodín)</p>
+                        <span class="deal-badge">Výhodná ponuka</span>
+                    </div>
+                </div>
+                <div class="price-item">
+                    <div class="price-content">
+                        <span class="price-amount">250€</span>
+                        <p class="price-description">Maľovanie na festivale (do 4 hodín)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <h2>📞 Kontakt 📞</h2>
+            <ul>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <a href="tel:+421919419072">+421 919 419 072</a>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <a href="mailto:klebanovasofia@gmail.com">klebanovasofia@gmail.com</a>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                    <a href="https://www.facebook.com/tvortvorivy?mibextid=wwXIfr&rdid=ilAPOUr0oRRz7ZXJ&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Z6UrMy7xe%2F%3Fmibextid%3DwwXIfr#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    <a href="https://www.instagram.com/sofia_klebanova/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <script>
+        // Animácia pre galériu
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.gallery img').forEach(img => {
+            observer.observe(img);
+        });
+
+        // Plynulé scrollovanie
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

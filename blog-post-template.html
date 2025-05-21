@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Názov Blogu - Maľovanie na tvár</title>
+    <link rel="stylesheet" href="../style.css"> <!-- Link to the main stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header and mobile menu structure will be similar to index.html -->
+    <!-- Note: Update href paths for navigation links if blog posts are in a subdirectory -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="site-logo">
+                 <span class="dot"></span>
+                 Maľovanie na tvár
+            </div>
+            <button class="hamburger-menu" aria-label="Open menu">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <nav class="desktop-navigation">
+                <ul>
+                    <li><a href="../index.html#about">O mne</a></li>
+                    <li><a href="../index.html#work">Moje práce</a></li>
+                    <li><a href="../index.html#reviews">Recenzie</a></li>
+                    <li><a href="../index.html#pricing">Cenník</a></li>
+                    <li><a href="../index.html#contact">Kontakt</a></li>
+                    <li><a href="../index.html#faq">Otázky a odpovede</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay"></div>
+    <nav class="mobile-navigation">
+        <ul>
+            <li><a href="../index.html#about">O mne</a></li>
+            <li><a href="../index.html#work">Moje práce</a></li>
+            <li><a href="../index.html#reviews">Recenzie</a></li>
+            <li><a href="../index.html#pricing">Cenník</a></li>
+            <li><a href="../index.html#contact">Kontakt</a></li>
+            <li><a href="../index.html#faq">Otázky a odpovede</a></li>
+             <li><a href="../blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <main class="blog-post-main">
+        <section class="blog-post-content">
+            <div class="container">
+                <article>
+                    <h1 class="post-title">Názov vášho blogového príspevku</h1>
+                    <p class="post-meta">Publikované [Dátum] | Kategória: [Kategória]</p>
+                    
+                    <img src="../images/blog-post-hero.jpg" alt="Hlavný obrázok príspevku" class="post-hero-image" loading="lazy">
+
+                    <div class="post-body">
+                        <!-- Your blog post content goes here -->
+                        <p>Toto je prvý odsek vášho blogového príspevku. Môžete sem pridať úvod k téme, o ktorej píšete.</p>
+
+                        <h2>Podnadpis</h2>
+                        <p>Ďalší odsek s podrobnejšími informáciami. Môžete používať štandardné HTML značky ako <code>&lt;p&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;blockquote&gt;</code>, atď.</p>
+
+                        <p>Nezabudnite pridať relevantné obrázky alebo videá na oživenie obsahu.</p>
+
+                        <h3>Ďalší podnadpis</h3>
+                        <p>Posledný odsek alebo zhrnutie. Výzva k akcii (call to action) môže byť tiež umiestnená na konci príspevku.</p>
+                    </div>
+                     <div class="back-to-blog">
+                        <a href="../blog.html">← Späť na blog</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Maľovanie na tvár. Všetky práva vyhradené.</p>
+        </div>
+    </footer>
+
+    <!-- Add existing scripts from index.html if needed, adapting paths -->
+    <!-- Note: This line should be reviewed/updated to include necessary script functionality or reference a shared script file -->
+    <script>
+        // Mobile menu functionality (copied from index.html)
+        const hamburger = document.querySelector('.hamburger-menu');
+        const mobileNavigation = document.querySelector('.mobile-navigation');
+        const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+        const body = document.body;
+
+        function toggleMobileMenu() {
+            body.classList.toggle('menu-open');
+        }
+
+        hamburger.addEventListener('click', toggleMobileMenu);
+        mobileOverlay.addEventListener('click', toggleMobileMenu);
+
+        // Smooth scrolling and menu closing for mobile navigation links
+        // Adjusting for links potentially going back to index.html sections
+        document.querySelectorAll('.mobile-navigation a[href]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Check if the link is an anchor to a section on the current page or index.html
+                const href = this.getAttribute('href');
+                const isLocalAnchor = href.startsWith('#');
+                const isIndexAnchor = href.startsWith('../index.html#'); // Adjusted path
+
+                if (isLocalAnchor) {
+                     // Smooth scroll on current page (if any local anchors exist, though unlikely on blog list)
+                     e.preventDefault();
+                     const targetId = href;
+                     const targetElement = document.querySelector(targetId);
+                     if (targetElement) {
+                         targetElement.scrollIntoView({
+                             behavior: 'smooth'
+                         });
+                     }
+                 } else if (isIndexAnchor) {
+                     // Allow navigation but close menu
+                     // No preventDefault, let the browser navigate
+                 } else {
+                     // Allow navigation to other pages (like blog post links)
+                     // No preventDefault, let the browser navigate
+                 }
+
+                // Always close the mobile menu after a click
+                if (body.classList.contains('menu-open')) {
+                    // Use a small timeout to allow event propagation if needed
+                    setTimeout(() => {
+                        toggleMobileMenu();
+                    }, 150); // Adjust delay as needed
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

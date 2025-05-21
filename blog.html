@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Maľovanie na tvár</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header and mobile menu structure will be similar to index.html -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="site-logo">
+                 <span class="dot"></span>
+                 Maľovanie na tvár
+            </div>
+            <button class="hamburger-menu" aria-label="Open menu">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <nav class="desktop-navigation">
+                <ul>
+                    <li><a href="index.html#about">O mne</a></li>
+                    <li><a href="index.html#work">Moje práce</a></li>
+                    <li><a href="index.html#reviews">Recenzie</a></li>
+                    <li><a href="index.html#pricing">Cenník</a></li>
+                    <li><a href="index.html#contact">Kontakt</a></li>
+                    <li><a href="index.html#faq">Otázky a odpovede</a></li>
+                     <li><a href="blog.html" class="active">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay"></div>
+    <nav class="mobile-navigation">
+        <ul>
+            <li><a href="index.html#about">O mne</a></li>
+            <li><a href="index.html#work">Moje práce</a></li>
+            <li><a href="index.html#reviews">Recenzie</a></li>
+            <li><a href="index.html#pricing">Cenník</a></li>
+            <li><a href="index.html#contact">Kontakt</a></li>
+            <li><a href="index.html#faq">Otázky a odpovede</a></li>
+             <li><a href="blog.html" class="active">Blog</a></li>
+        </ul>
+    </nav>
+
+    <main class="blog-page-main">
+        <section class="blog-listing">
+            <div class="container">
+                <h2>📝 Náš Blog 📝</h2>
+                <div class="blog-posts-list">
+
+                    <!-- Example Blog Post Summary -->
+                    <article class="blog-post-summary">
+                        <img src="images/blog1.jpg" alt="Náhledový obrázek blogu" loading="lazy">
+                        <div class="post-summary-content">
+                            <h3><a href="blog-post-template.html">5 tipov pre nezabudnuteľné maľovanie na detskej oslave</a></h3>
+                            <p class="post-meta">Publikované 15. mája 2024</p>
+                            <p>Chystáte detskú oslavu a chcete, aby bola plná farieb a radosti? Maľovanie na tvár je skvelá voľba! Prečítajte si našich 5 tipov...</p>
+                            <a href="blog-post-template.html" class="read-more">Čítať viac →</a>
+                        </div>
+                    </article>
+
+                    <!-- Add more blog post summaries here -->
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Maľovanie na tvár. Všetky práva vyhradené.</p>
+        </div>
+    </footer>
+
+    <!-- Add existing scripts from index.html if needed, adapting paths -->
+    <script>
+        // Mobile menu functionality (copied from index.html)
+        const hamburger = document.querySelector('.hamburger-menu');
+        const mobileNavigation = document.querySelector('.mobile-navigation');
+        const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+        const body = document.body;
+
+        function toggleMobileMenu() {
+            body.classList.toggle('menu-open');
+        }
+
+        hamburger.addEventListener('click', toggleMobileMenu);
+        mobileOverlay.addEventListener('click', toggleMobileMenu);
+
+        // Smooth scrolling and menu closing for mobile navigation links
+        // Adjusting for links potentially going back to index.html sections
+        document.querySelectorAll('.mobile-navigation a[href]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Check if the link is an anchor to a section on the current page or index.html
+                const href = this.getAttribute('href');
+                const isLocalAnchor = href.startsWith('#');
+                const isIndexAnchor = href.startsWith('index.html#');
+
+                if (isLocalAnchor) {
+                     // Smooth scroll on current page (if any local anchors exist, though unlikely on blog list)
+                     e.preventDefault();
+                     const targetId = href;
+                     const targetElement = document.querySelector(targetId);
+                     if (targetElement) {
+                         targetElement.scrollIntoView({
+                             behavior: 'smooth'
+                         });
+                     }
+                 } else if (isIndexAnchor) {
+                     // Allow navigation but close menu
+                     // No preventDefault, let the browser navigate
+                 } else {
+                     // Allow navigation to other pages (like blog post links)
+                     // No preventDefault, let the browser navigate
+                 }
+
+                // Always close the mobile menu after a click
+                if (body.classList.contains('menu-open')) {
+                    // Use a small timeout to allow event propagation if needed
+                    setTimeout(() => {
+                        toggleMobileMenu();
+                    }, 150); // Adjust delay as needed
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Scroll-based Animations (copied from index.html)
+        const animateInElements = document.querySelectorAll('.animate-in');
+
+        const animateObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            rootMargin: '0px',
+            threshold: 0.1
+        });
+
+        animateInElements.forEach(element => {
+            animateObserver.observe(element);
+        });
+
+        // Mobile menu functionality (copied from index.html)
+        // ... existing code ...
+    </script>
+
+</body>
+</html> 

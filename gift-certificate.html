@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darčekový poukaz - Maľovanie na tvár</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="logo">
+                    <span class="logo-icon">🎨</span>
+                    <span class="logo-text">Maľovanie na tvár</span>
+                </a>
+                <button class="menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="/index.html#sluzby">Služby</a></li>
+                        <li><a href="/index.html#galeria">Galéria</a></li>
+                        <li><a href="/index.html#cennik">Cenník</a></li>
+                        <li><a href="/index.html#recenzie">Recenzie</a></li>
+                        <li><a href="/index.html#kontakt">Kontakt</a></li>
+                        <li><a href="/gift-certificate.html">Darčekový poukaz</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="gift-certificate-section">
+            <div class="container">
+                <h1 class="section-title">Darčekový poukaz</h1>
+                <p>Prekvapte svojich blízkych jedinečným zážitkom! Darujte im poukaz na profesionálne maľovanie na tvár.</p>
+                
+                <div class="gift-options">
+                    <h2>Vyberte si hodnotu poukazu</h2>
+                    <!-- Example options - replace with actual purchase links/forms -->
+                    <div class="gift-option-card">
+                        <h3>Poukaz na 1 hodinu</h3>
+                        <p class="price">75€</p>
+                        <a href="#" class="button button-primary">Kúpiť poukaz</a>
+                    </div>
+                    <div class="gift-option-card">
+                        <h3>Poukaz na 2 hodiny</h3>
+                        <p class="price">150€</p>
+                        <a href="#" class="button button-primary">Kúpiť poukaz</a>
+                    </div>
+                    <div class="gift-option-card">
+                        <h3>Poukaz na mieru</h3>
+                        <p class="price">Podľa dohody</p>
+                        <a href="#kontakt" class="button button-secondary">Kontaktujte nás</a>
+                    </div>
+                </div>
+
+                <div class="gift-purchase-form">
+                    <h2>Máte záujem o poukaz? Kontaktujte nás!</h2>
+                    <form id="giftCertificateForm" action="https://staticsiteforms.co.uk/klebanovasofia@gmail.com" method="POST">
+                        <div class="form-group">
+                            <label for="gift-name">Vaše meno</label>
+                            <input type="text" id="gift-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gift-email">Váš Email</label>
+                            <input type="email" id="gift-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gift-voucher-type">Typ poukazu o ktorý máte záujem</label>
+                            <select id="gift-voucher-type" name="voucherType" required>
+                                <option value="">Vyberte typ poukazu</option>
+                                <option value="1hour">Poukaz na 1 hodinu (75€)</option>
+                                <option value="2hours">Poukaz na 2 hodiny (150€)</option>
+                                <option value="custom">Poukaz na mieru</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="gift-message">Vaša správa (nepovinné)</label>
+                            <textarea id="gift-message" name="message"></textarea>
+                        </div>
+                        <button type="submit" class="button button-primary">
+                            Odoslať záujem
+                            <svg class="button-icon" viewBox="0 0 24 24">
+                                <path d="M5 12h14M19 12l-7-7M19 12l-7 7"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="how-to-redeem">
+                    <h2>Ako poukaz uplatniť?</h2>
+                    <p>Majiteľ poukazu nás jednoducho kontaktuje telefonicky alebo emailom, dohodneme si termín a miesto maľovania. Pri uplatnení stačí predložiť kód poukazu.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="copyright">&copy; 2024 Maľovanie na tvár. Všetky práva vyhradené.</p>
+                </div>
+                <nav class="footer-nav">
+                    <ul class="footer-links">
+                        <li><a href="/ochrana-sukromia">Ochrana súkromia</a></li>
+                        <li><a href="/podmienky">Podmienky používania</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="container">
+            <p>Táto webstránka používa súbory cookie na zlepšenie používateľského zážitku. Používaním tejto stránky súhlasíte s používaním súborov cookie.</p>
+            <div class="cookie-buttons">
+                <button class="button button-primary" id="acceptCookies">Súhlasím</button>
+                <a href="/ochrana-sukromia" class="button button-secondary">Viac informácií</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Späť hore">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
+
+    <!-- Butterflies Container -->
+    <div class="butterflies-container">
+        <!-- Butterflies will be added here by JavaScript or CSS -->
+        <div class="butterfly"></div>
+        <div class="butterfly"></div>
+        <div class="butterfly"></div>
+        <div class="butterfly"></div>
+        <div class="butterfly"></div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+</body>
+</html> 

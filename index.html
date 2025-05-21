@@ -2,184 +2,373 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maľovanie na tvár - Premeníme každé dieťa na vílu, tigra alebo superhrdinu</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Maľovanie na tvár - Profesionálne maľovanie pre deti</title>
+    <meta name="description" content="Profesionálne maľovanie na tvár pre detské oslavy, festivaly a špeciálne príležitosti. Premeníme každé dieťa na vílu, tigra alebo superhrdinu.">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="fonts/poppins-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="css/style.css" as="style">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 </head>
 <body>
-    <div class="fairy-container">
-        <div class="decorative-side left"></div>
-        <div class="decorative-side right"></div>
-        <img src="images/fairy.svg" alt="Víla" class="fairy-animation left">
-        <img src="images/fairy.svg" alt="Víla" class="fairy-animation right">
-    </div>
-    <img src="images/decor-dots.svg" alt="Dekoratívne bodky" class="decor decor-dots">
-    <img src="images/decor-stars.svg" alt="Dekoratívne hviezdičky" class="decor decor-stars">
+    <!-- Header -->
     <header class="header">
-        <div class="logo">
-            <span class="dot"></span>
-            Maľovanie na tvár
-        </div>
-        <nav>
-            <a href="#about">O mne</a>
-            <a href="#work">Moje práce</a>
-            <a href="#reviews">Recenzie</a>
-            <a href="#pricing">Cenník</a>
-            <a href="#contact">Kontakt</a>
-        </nav>
-    </header>
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-image">
-                <div class="image-frame">
-                    <img src="images/hero.jpg" alt="Maľovanie na tvár">
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="logo">
+                    <span class="logo-icon">🎨</span>
+                    <span class="logo-text">Maľovanie na tvár</span>
+                </a>
+                
+                <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+                
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="#sluzby">Služby</a></li>
+                        <li><a href="#galeria">Galéria</a></li>
+                        <li><a href="#cennik">Cenník</a></li>
+                        <li><a href="#recenzie">Recenzie</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                        <li><a href="/gift-certificate.html">Darčekový poukaz</a></li>
+                </ul>
                 </div>
-            </div>
-            <div class="hero-text">
-                <div class="magical-sparkles"></div>
-                <h1 class="magical-title">
-                    <span class="word">Premeníme</span>
-                    <span class="word">každé</span>
-                    <span class="word">dieťa</span>
-                    <span class="word">na</span>
-                    <span class="word highlight">vílu</span>
-                    <span class="word">tigra</span>
-                    <span class="word">alebo</span>
-                    <span class="word highlight">superhrdinu</span>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+        <div class="hero-content">
+                <h1 class="hero-title">
+                    Premeníme každé dieťa na vílu, tigra alebo superhrdinu
                 </h1>
-                <div class="hero-description">
-                    <div class="magical-border">
-                        <p>✨ Vytváram kúzelný svet maľovaním na tvár, kde sa každé dieťa môže stať svojou obľúbenou postavou. Profesionálne maľovanie na tvár pre detské oslavy, festivaly a špeciálne príležitosti. ✨</p>
-                    </div>
-                    <a href="#contact" class="btn magical-btn">
-                        <span class="btn-sparkle"></span>
+                <p class="hero-subtitle">
+                    Profesionálne maľovanie na tvár pre detské oslavy, festivaly a špeciálne príležitosti
+                </p>
+                <div class="hero-cta">
+                    <a href="#kontakt" class="button button-primary">
                         Objednať maľovanie
-                        <span class="btn-sparkle"></span>
+                        <svg class="button-icon" viewBox="0 0 24 24">
+                            <path d="M5 12h14M19 12l-7-7M19 12l-7 7"/>
+                        </svg>
                     </a>
                 </div>
             </div>
+            <div class="hero-image">
+                <img src="images/hero.jpg" alt="Maľovanie na tvár" width="800" height="600" loading="eager">
+            </div>
         </div>
     </section>
-    <main>
-        <section id="about" class="about">
-            <h2>✨ O mne ✨</h2>
-            <img src="images/omne.jpg" alt="Sofia" class="o-mne-img">
-            <p>Vitajte v kúzelnom svete maľovania na tvár! Som profesionálna maliarka na tvár s vášňou pre vytváranie úsmevov na detských tvárach. S mojím jemným dotykom a kreatívnym duchom premieňam každé dieťa na jeho obľúbenú postavu.</p>
-            <p>✨ Používam len najkvalitnejšie, hypoalergénne farby špeciálne vyvinuté pre maľovanie na tvár ✨</p>
-        </section>
-        <section id="work" class="work">
-            <h2>🎨 Moje práce 🎨</h2>
-            <div class="gallery">
-                <img src="images/face1.jpg" alt="Maľovanie na tvár - príklad 1" loading="lazy">
-                <img src="images/face2.jpg" alt="Maľovanie na tvár - príklad 2" loading="lazy">
-            </div>
-            <h3 class="gallery-title">Moje najnovšie práce na Instagrame</h3>
-            <div class="instagram-gallery">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-h-eUVI4LZ/" data-instgrm-version="14">
-                    <a href="https://www.instagram.com/reel/C-h-eUVI4LZ/"></a>
-                </blockquote>
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-h4iU5oX-J/" data-instgrm-version="14">
-                    <a href="https://www.instagram.com/reel/C-h4iU5oX-J/"></a>
-                </blockquote>
-            </div>
-            <script async src="//www.instagram.com/embed.js"></script>
-        </section>
-        <section id="reviews" class="reviews">
-            <h2>⭐ Recenzie ⭐</h2>
-            <div class="review">
-                <div class="stars">★★★★★</div>
-                <p>"Úžasné maľovanie na tvár! Deti boli nadšené a maľovanie vydržalo celý deň. Profesionálny prístup a krásne výsledky."</p>
-                <cite>- Mária K., Bratislava</cite>
-            </div>
-            <div class="review">
-                <div class="stars">★★★★★</div>
-                <p>"Najlepšia maliarka na tvár, akú sme mali! Deti si to užili a maľovanie bolo nádherne detailné. Určite odporúčam!"</p>
-                <cite>- Jana M., Košice</cite>
-            </div>
-        </section>
-        <section id="pricing" class="pricing">
-            <h2>💰 Cenník 💰</h2>
-            <div class="price-list">
-                <div class="price-item">
-                    <span>15€</span>
-                    <p>Jednoduché maľovanie na tvár (do 10 minút)</p>
-                </div>
-                <div class="price-item">
-                    <span>25€</span>
-                    <p>Komplexné maľovanie na tvár (10-20 minút)</p>
-                </div>
-                <div class="price-item">
-                    <span>150€</span>
-                    <p>Maľovanie na detskej oslave (do 2 hodín)</p>
-                </div>
-                <div class="price-item">
-                    <span>250€</span>
-                    <p>Maľovanie na festivale (do 4 hodín)</p>
-                </div>
-            </div>
-        </section>
-        <section id="contact" class="contact">
-            <h2>📞 Kontakt 📞</h2>
-            <ul>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                    </svg>
-                    <a href="tel:+421919419072">+421 919 419 072</a>
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <a href="mailto:klebanovasofia@gmail.com">klebanovasofia@gmail.com</a>
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                    <a href="https://www.facebook.com/tvortvorivy?mibextid=wwXIfr&rdid=ilAPOUr0oRRz7ZXJ&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Z6UrMy7xe%2F%3Fmibextid%3DwwXIfr#" target="_blank" rel="noopener noreferrer">Facebook</a>
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                    <a href="https://www.instagram.com/sofia_klebanova/" target="_blank" rel="noopener noreferrer">Instagram</a>
-                </li>
-            </ul>
-        </section>
-    </main>
-    <script>
-        // Animácia pre galériu
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
 
-        document.querySelectorAll('.gallery img').forEach(img => {
-            observer.observe(img);
-        });
+    <!-- Services Section -->
+    <section id="sluzby" class="services">
+        <div class="container">
+            <h2 class="section-title">Naše služby</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎂</div>
+                    <h3>Detské oslavy</h3>
+                    <p>Maľovanie na narodeninových oslavách a rodinných stretnutiach</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎪</div>
+                    <h3>Festivaly</h3>
+                    <p>Profesionálne maľovanie na kultúrnych a zábavných podujatiach</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Firemné akcie</h3>
+                    <p>Maľovanie na firemných eventoch a teambuildingoch</p>
+                </div>
+                </div>
+            </div>
+        </section>
 
-        // Plynulé scrollovanie
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <!-- Gallery Section -->
+    <section id="galeria" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Galéria</h2>
+            <div class="gallery-filters">
+                <button class="filter-button active" data-filter="all">Všetky</button>
+                <button class="filter-button" data-filter="oslava">Oslavy</button>
+                <button class="filter-button" data-filter="festival">Festivaly</button>
+                <button class="filter-button" data-filter="firemna">Firemné</button>
+            </div>
+            <div class="gallery-grid">
+                <!-- Gallery items will be loaded dynamically -->
+            </div>
+            <button class="button button-secondary load-more">
+                Načítať viac
+                <svg class="button-icon" viewBox="0 0 24 24">
+                    <path d="M12 5v14M5 12l7-7 7 7"/>
+                </svg>
+            </button>
+            </div>
+        </section>
+
+    <!-- Pricing Section -->
+    <section id="cennik" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Cenník</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Základné maľovanie</h3>
+                        <div class="price">15€</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Jednoduché motívy</li>
+                        <li>Do 10 minút</li>
+                        <li>Vhodné pre deti od 3 rokov</li>
+                    </ul>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <h3>Komplexné maľovanie</h3>
+                        <div class="price">25€</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Detailné motívy</li>
+                        <li>10-20 minút</li>
+                        <li>Vhodné pre deti od 4 rokov</li>
+                    </ul>
+                    </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Oslava (2 hodiny)</h3>
+                        <div class="price">150€</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Neobmedzený počet detí</li>
+                        <li>Rôzne motívy</li>
+                        <li>Vhodné pre všetky vekové kategórie</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </section>
+
+    <!-- Reviews Section -->
+    <section id="recenzie" class="reviews">
+        <div class="container">
+            <h2 class="section-title">Recenzie</h2>
+            <div class="reviews-slider">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Úžasné maľovanie na tvár! Deti boli nadšené a maľovanie vydržalo celý deň. Profesionálny prístup a krásne výsledky."</p>
+                    <div class="review-author">Mária K., Bratislava</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Najlepšia maliarka na tvár, akú sme mali! Deti si to užili a maľovanie bolo nádherne detailné. Určite odporúčam!"</p>
+                    <div class="review-author">Jana M., Košice</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Sofia je neuveriteľne talentovaná! Z mojej dcérky vykúzlila nádhernú motýliu vílu. Vrelo odporúčam na každú detskú oslavu."</p>
+                    <div class="review-author">Peter S., Trnava</div>
+                </div>
+            </div>
+            <div class="reviews-controls">
+                <button class="slider-prev" aria-label="Predchádzajúca recenzia">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="slider-next" aria-label="Ďalšia recenzia">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+                </div>
+            </div>
+        </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="contact">
+        <div class="container">
+            <h2 class="section-title">Kontakt</h2>
+            <div class="contact-grid">
+                <form class="contact-form" id="contactForm" action="https://staticsiteforms.co.uk/klebanovasofia@gmail.com" method="POST">
+                    <div class="form-group">
+                        <label for="name">Meno</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefón</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                     <div class="form-group">
+                        <label for="event">Typ udalosti</label>
+                        <select id="event" name="event" required>
+                            <option value="">Vyberte typ udalosti</option>
+                            <option value="oslava">Narodeniny</option>
+                            <option value="festival">Festival</option>
+                            <option value="firemna">Firemná akcia</option>
+                            <option value="ine">Iná udalosť</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Dátum udalosti</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Správa</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="button button-primary">
+                        Odoslať správu
+                        <svg class="button-icon" viewBox="0 0 24 24">
+                            <path d="M5 12h14M19 12l-7-7M19 12l-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+                
+                <div class="contact-info">
+                    <h3>Kontaktujte nás priamo</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <a href="tel:+421919419072" class="contact-link">
+                                <svg class="contact-icon" viewBox="0 0 24 24">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                +421 919 419 072
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:klebanovasofia@gmail.com" class="contact-link">
+                                <svg class="contact-icon" viewBox="0 0 24 24">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                klebanovasofia@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/tvortvorivy" target="_blank" rel="noopener" class="contact-link">
+                                <svg class="contact-icon" viewBox="0 0 24 24">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                                </svg>
+                                Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/sofia_klebanova/" target="_blank" rel="noopener" class="contact-link">
+                                <svg class="contact-icon" viewBox="0 0 24 24">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                                </svg>
+                                Instagram
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Časté otázky</h2>
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Je maľovanie na tvár vhodné pre deti do troch rokov?
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Väčšina farieb, s ktorými pracujeme, nie je odporúčaná pre deti mladšie 3 rokov. Okrem toho sa niektoré menšie deti maľovania boja. Pre najlepší zážitok odporúčame maľovanie pre deti od 3 rokov.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Dajú sa obrázky z tváre zmyť vodou?
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Áno, farby sa z tváre umývajú rýchlo a jednoducho len s použitím vody. Rovnako jednoducho sa farby dajú z oblečenia vyprať.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Ako dlho maľovanie vydrží?
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Obrázok na tvári vydrží dlhšie, pokiaľ nedochádza k nadmernému poteniu alebo kontaktu s vodou. Pri správnej starostlivosti môže vydržať aj do nasledujúceho dňa, ale odporúčame ho pred spaním umyť.</p>
+                    </div>
+                </details>
+            </div>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="copyright">&copy; 2024 Maľovanie na tvár. Všetky práva vyhradené.</p>
+                </div>
+                <nav class="footer-nav">
+                    <ul class="footer-links">
+                        <li><a href="/ochrana-sukromia">Ochrana súkromia</a></li>
+                        <li><a href="/podmienky">Podmienky používania</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="container">
+            <p>Táto webstránka používa súbory cookie na zlepšenie používateľského zážitku. Používaním tejto stránky súhlasíte s používaním súborov cookie.</p>
+            <div class="cookie-buttons">
+                <button class="button button-primary" id="acceptCookies">Súhlasím</button>
+                <a href="/ochrana-sukromia" class="button button-secondary">Viac informácií</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Späť hore">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+
+    <!-- Butterflies Container -->
+    <div class="butterflies-container">
+        <!-- Butterflies will be added here by JavaScript or CSS -->
+        <div class="butterfly"></div>
+        <div class="butterfly"></div>
+        <div class="butterfly"></div>
+        <div class="butterfly"></div>
+        <div class="butterfly"></div>
+    </div>
 </body>
 </html> 
