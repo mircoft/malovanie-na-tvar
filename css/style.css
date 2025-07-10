@@ -364,10 +364,30 @@ a:hover {
 }
 
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.gallery-item {
+    flex: 0 1 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.gallery-item img {
+    width: 100%;
+    max-width: 320px;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px 0 rgba(233,30,99,0.10);
+    display: block;
+    margin: 0 auto;
 }
 
 .load-more {
@@ -885,36 +905,91 @@ a:hover {
     text-align: center;
 }
 
+.gift-certificate-section .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.gift-certificate-section .section-title {
+    margin-top: 4.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.gift-options-wrapper {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: linear-gradient(90deg, #fff8f9 0%, #ffe3ec 100%);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px 0 rgba(233,30,99,0.07);
+    padding: 4.5rem 4vw 3rem 4vw;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
 .gift-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-xl);
-    margin-top: var(--spacing-xl);
-    margin-bottom: var(--spacing-xxl);
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 3.5rem;
+    overflow-x: auto;
+    justify-content: center;
+    width: 100%;
+    padding: 0 2vw;
+    box-sizing: border-box;
 }
 
 .gift-option-card {
-    padding: var(--spacing-xl);
-    background-color: var(--color-background);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-md);
-    transition: var(--transition-normal);
+    min-width: 300px;
+    max-width: 340px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 1.25rem;
+    box-shadow: 0 2px 12px 0 rgba(233,30,99,0.10);
+    padding: 2.5rem 1.5rem 2rem 1.5rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid #ffe3ec;
+    text-align: center;
+    height: 100%;
+    margin-top: 1.2rem;
 }
-
 .gift-option-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px 0 rgba(233,30,99,0.18);
+    border-color: #f48fb1;
 }
-
 .gift-option-card h3 {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 0.5rem;
+    font-size: 1.35rem;
+    color: #e91e63;
 }
-
 .gift-option-card .price {
-    font-size: 2rem;
-    font-weight: var(--font-weight-bold);
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-lg);
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #c2185b;
+    margin-bottom: 1.5rem;
+}
+.gift-option-card .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.2rem;
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 0.8rem 0;
+    border-radius: 2rem;
+    text-align: center;
+    gap: 0.5em;
 }
 
 .how-to-redeem {
@@ -989,4 +1064,16 @@ a:hover {
 
 .gift-purchase-form button[type="submit"] {
     width: 100%;
+} 
+
+.gift-options > h2, .gift-options-wrapper > h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.35rem;
+    color: #c2185b;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    align-self: center;
 } 

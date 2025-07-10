@@ -15,7 +15,7 @@
         <div class="container">
             <nav class="nav">
                 <a href="/" class="logo">
-                    <span class="logo-icon">🎨</span>
+                    <img src="images/logo.png" alt="Logo" class="logo-img" style="height: 90px; width: auto; vertical-align: middle; margin-right: 0.5em;">
                     <span class="logo-text">Maľovanie na tvár</span>
                 </a>
                 <button class="menu-toggle" aria-label="Menu">
@@ -43,29 +43,33 @@
                 <h1 class="section-title">Darčekový poukaz</h1>
                 <p>Prekvapte svojich blízkych jedinečným zážitkom! Darujte im poukaz na profesionálne maľovanie na tvár.</p>
                 
-                <div class="gift-options">
+                <!-- Začiatok sekcie s možnosťami poukazov -->
+                <div class="gift-options-wrapper">
                     <h2>Vyberte si hodnotu poukazu</h2>
-                    <!-- Example options - replace with actual purchase links/forms -->
-                    <div class="gift-option-card">
-                        <h3>Poukaz na 1 hodinu</h3>
-                        <p class="price">75€</p>
-                        <a href="#" class="button button-primary">Kúpiť poukaz</a>
-                    </div>
-                    <div class="gift-option-card">
-                        <h3>Poukaz na 2 hodiny</h3>
-                        <p class="price">150€</p>
-                        <a href="#" class="button button-primary">Kúpiť poukaz</a>
-                    </div>
-                    <div class="gift-option-card">
-                        <h3>Poukaz na mieru</h3>
-                        <p class="price">Podľa dohody</p>
-                        <a href="#kontakt" class="button button-secondary">Kontaktujte nás</a>
+                    <div class="gift-options">
+                        <div class="gift-option-card">
+                            <h3>Poukaz na 1 hodinu</h3>
+                            <p class="price">75€</p>
+                            <a href="#gift-form" class="button button-primary buy-voucher" data-voucher="Poukaz na 1 hodinu (75€)">Kúpiť poukaz</a>
+                        </div>
+                        <div class="gift-option-card">
+                            <h3>Poukaz na 2 hodiny</h3>
+                            <p class="price">150€</p>
+                            <a href="#gift-form" class="button button-primary buy-voucher" data-voucher="Poukaz na 2 hodiny (150€)">Kúpiť poukaz</a>
+                        </div>
+                        <div class="gift-option-card">
+                            <h3>Poukaz na mieru</h3>
+                            <p class="price">Podľa dohody</p>
+                            <a href="#gift-form" class="button button-secondary buy-voucher" data-voucher="Poukaz na mieru">Kontaktujte nás</a>
+                        </div>
                     </div>
                 </div>
+                <!-- Koniec sekcie s možnosťami poukazov -->
 
-                <div class="gift-purchase-form">
+                <div class="gift-purchase-form" id="gift-form">
                     <h2>Máte záujem o poukaz? Kontaktujte nás!</h2>
-                    <form id="giftCertificateForm" action="https://staticsiteforms.co.uk/klebanovasofia@gmail.com" method="POST">
+                    <form id="giftCertificateForm" action="https://formspree.io/f/mjkrnvpq" method="POST">
+                        <input type="hidden" name="_replyto" value="Mircoft.sk@gmail.com">
                         <div class="form-group">
                             <label for="gift-name">Vaše meno</label>
                             <input type="text" id="gift-name" name="name" required>

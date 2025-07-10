@@ -79,33 +79,35 @@ if (galleryFilters && galleryGrid) {
     const galleryItems = [
         {
             category: 'oslava',
-            image: 'images/gallery/oslava1.jpg',
-            title: 'Kúzelná víla',
-            description: 'Narodeninová oslava'
+            image: 'images/smolenice0.jpg',
+            title: 'Smolenice 0',
+            description: 'Maľovanie na tvár - Smolenice'
         },
         {
-            category: 'festival',
-            image: 'images/gallery/festival1.jpg',
-            title: 'Tiger',
-            description: 'Festival detí'
+            category: 'oslava',
+            image: 'images/smolenice1.jpg',
+            title: 'Smolenice 1',
+            description: 'Maľovanie na tvár - Smolenice'
         },
         {
-            category: 'firemna',
-            image: 'images/gallery/firemna1.jpg',
-            title: 'Motýlik',
-            description: 'Firemná akcia'
-        }
-        // Add more items as needed
+            category: 'oslava',
+            image: 'images/smolenice2.jpg',
+            title: 'Smolenice 2',
+            description: 'Maľovanie na tvár - Smolenice'
+        },
+        {
+            category: 'oslava',
+            image: 'images/smolenice3.jpg',
+            title: 'Smolenice 3',
+            description: 'Maľovanie na tvár - Smolenice'
+        },
+        // Pridajte ďalšie obrázky podľa potreby
     ];
 
     function createGalleryItem(item) {
         return `
             <div class="gallery-item" data-category="${item.category}">
                 <img src="${item.image}" alt="${item.title}" loading="lazy">
-                <div class="gallery-item-overlay">
-                    <h3>${item.title}</h3>
-                    <p>${item.description}</p>
-                </div>
             </div>
         `;
     }
@@ -348,4 +350,31 @@ giftCertificateForm?.addEventListener('submit', async (e) => {
         submitButton.disabled = false;
         submitButton.innerHTML = originalButtonText;
     }
+}); 
+
+document.addEventListener('DOMContentLoaded', function() {
+  var voucherButtons = document.querySelectorAll('.buy-voucher');
+  var voucherSelect = document.getElementById('gift-voucher-type');
+  var formSection = document.getElementById('gift-form');
+
+  voucherButtons.forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      // Predvyplniť typ poukazu
+      var voucher = btn.getAttribute('data-voucher');
+      if (voucherSelect) {
+        for (var i = 0; i < voucherSelect.options.length; i++) {
+          if (voucherSelect.options[i].text === voucher) {
+            voucherSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      // Plynulý scroll k formuláru
+      if (formSection) {
+        setTimeout(function() {
+          formSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 50);
+      }
+    });
+  });
 }); 
