@@ -14,7 +14,7 @@
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <a href="/" class="logo">
+                <a href="/malovanie-na-tvar/" class="logo">
                     <img src="images/logo.png" alt="Logo" class="logo-img" style="height: 90px; width: auto; vertical-align: middle; margin-right: 0.5em;">
                     <span class="logo-text">Maľovanie na tvár</span>
                 </a>
@@ -25,12 +25,12 @@
                 </button>
                 <div class="nav-menu">
                     <ul class="nav-list">
-                        <li><a href="/index.html#sluzby">Služby</a></li>
-                        <li><a href="/index.html#galeria">Galéria</a></li>
-                        <li><a href="/index.html#cennik">Cenník</a></li>
-                        <li><a href="/index.html#recenzie">Recenzie</a></li>
-                        <li><a href="/index.html#kontakt">Kontakt</a></li>
-                        <li><a href="/gift-certificate.html">Darčekový poukaz</a></li>
+                        <li><a href="/malovanie-na-tvar/index.html#sluzby">Služby</a></li>
+                        <li><a href="/malovanie-na-tvar/index.html#galeria">Galéria</a></li>
+                        <li><a href="/malovanie-na-tvar/index.html#cennik">Cenník</a></li>
+                        <li><a href="/malovanie-na-tvar/index.html#recenzie">Recenzie</a></li>
+                        <li><a href="/malovanie-na-tvar/index.html#kontakt">Kontakt</a></li>
+                        <li><a href="/malovanie-na-tvar/gift-certificate.html">Darčekový poukaz</a></li>
                     </ul>
                 </div>
             </nav>
@@ -80,7 +80,7 @@
                       </label>
                       <label>
                         Your message:
-                        <textarea name="message" required placeholder="Ďakujeme, že ste si zakúpili darčekový poukaz na maľovanie na tvár! Vaša objednávka bola úspešne prijatá. Budeme vás čoskoro kontaktovať s ďalšími informáciami. Prajeme krásny deň!">Ďakujeme, že ste si zakúpili darčekový poukaz na maľovanie na tvár! Vaša objednávka bola úspešne prijatá. Budeme vás čoskoro kontaktovať s ďalšími informáciami. Prajeme krásny deň!</textarea>
+                        <textarea name="message" required placeholder="Ďakujeme, že ste si zakúpili darčekový poukaz na maľovanie na tvár! Vaša objednávka bola úspešne prijatá. Budeme vás čoskoro kontaktovať s ďalšími informáciami. Prajeme krásny deň!"></textarea>
                       </label>
                       <button type="submit" class="button button-primary">Send</button>
                     </form>
@@ -141,5 +141,38 @@
     
     <!-- Scripts -->
     <script src="js/main.js" defer></script>
+    <!-- Formspree Formbutton -->
+    <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+    <script>
+      window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
+      formbutton("create", {
+        action: "https://formspree.io/f/mjkrnvpq",
+        title: "How can we help?",
+        fields: [
+          { 
+            type: "email", 
+            label: "Email:", 
+            name: "email",
+            required: true,
+            placeholder: "your@email.com"
+          },
+          {
+            type: "textarea",
+            label: "Message:",
+            name: "message",
+            placeholder: "What's on your mind?",
+          },
+          { type: "submit" }      
+        ],
+        styles: {
+          title: {
+            backgroundColor: "gray"
+          },
+          button: {
+            backgroundColor: "gray"
+          }
+        }
+      });
+    </script>
 </body>
 </html> 
