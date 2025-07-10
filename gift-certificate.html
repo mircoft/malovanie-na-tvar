@@ -68,35 +68,21 @@
 
                 <div class="gift-purchase-form" id="gift-form">
                     <h2>Máte záujem o poukaz? Kontaktujte nás!</h2>
-                    <form id="giftCertificateForm" action="https://formspree.io/f/mjkrnvpq" method="POST">
-                        <input type="hidden" name="_replyto" value="Mircoft.sk@gmail.com">
-                        <div class="form-group">
-                            <label for="gift-name">Vaše meno</label>
-                            <input type="text" id="gift-name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="gift-email">Váš Email</label>
-                            <input type="email" id="gift-email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="gift-voucher-type">Typ poukazu o ktorý máte záujem</label>
-                            <select id="gift-voucher-type" name="voucherType" required>
-                                <option value="">Vyberte typ poukazu</option>
-                                <option value="1hour">Poukaz na 1 hodinu (75€)</option>
-                                <option value="2hours">Poukaz na 2 hodiny (150€)</option>
-                                <option value="custom">Poukaz na mieru</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="gift-message">Vaša správa (nepovinné)</label>
-                            <textarea id="gift-message" name="message"></textarea>
-                        </div>
-                        <button type="submit" class="button button-primary">
-                            Odoslať záujem
-                            <svg class="button-icon" viewBox="0 0 24 24">
-                                <path d="M5 12h14M19 12l-7-7M19 12l-7 7"/>
-                            </svg>
-                        </button>
+                    <form
+                      action="https://formspree.io/f/mjkrnvpq"
+                      method="POST"
+                      id="giftCertificateForm"
+                      class="gift-form-freeform"
+                    >
+                      <label>
+                        Your email:
+                        <input type="email" name="email" required>
+                      </label>
+                      <label>
+                        Your message:
+                        <textarea name="message" required placeholder="Ďakujeme, že ste si zakúpili darčekový poukaz na maľovanie na tvár! Vaša objednávka bola úspešne prijatá. Budeme vás čoskoro kontaktovať s ďalšími informáciami. Prajeme krásny deň!">Ďakujeme, že ste si zakúpili darčekový poukaz na maľovanie na tvár! Vaša objednávka bola úspešne prijatá. Budeme vás čoskoro kontaktovať s ďalšími informáciami. Prajeme krásny deň!</textarea>
+                      </label>
+                      <button type="submit" class="button button-primary">Send</button>
                     </form>
                 </div>
 
