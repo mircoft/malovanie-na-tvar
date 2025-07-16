@@ -40,69 +40,65 @@
     <main>
         <section class="gift-certificate-section">
             <div class="container">
-                <h1 class="section-title">Darčekový poukaz</h1>
-                <p>Prekvapte svojich blízkych jedinečným zážitkom! Darujte im poukaz na profesionálne maľovanie na tvár.</p>
-                
-                <!-- Začiatok sekcie s možnosťami poukazov -->
-                <div class="gift-options-wrapper">
-                    <h2>Vyberte si hodnotu poukazu</h2>
-                    <div class="gift-options">
-                        <div class="gift-option-card">
-                            <h3>Poukaz na 1 hodinu</h3>
-                            <p class="price">75€</p>
-                            <a href="#gift-form" class="button button-primary buy-voucher" data-voucher="Poukaz na 1 hodinu (75€)">Kúpiť poukaz</a>
-                        </div>
-                        <div class="gift-option-card">
-                            <h3>Poukaz na 2 hodiny</h3>
-                            <p class="price">150€</p>
-                            <a href="#gift-form" class="button button-primary buy-voucher" data-voucher="Poukaz na 2 hodiny (150€)">Kúpiť poukaz</a>
-                        </div>
-                        <div class="gift-option-card">
-                            <h3>Poukaz na mieru</h3>
-                            <p class="price">Podľa dohody</p>
-                            <a href="#gift-form" class="button button-secondary buy-voucher" data-voucher="Poukaz na mieru">Kontaktujte nás</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Koniec sekcie s možnosťami poukazov -->
-
+                <h1 class="section-title">Darčekový kupón na detskú oslavu</h1>
+                <p>Darujte zážitok na mieru! Kupón na detskú oslavu – balíček si môžete poskladať podľa seba: maľovanie na tvár, trblietavé tetovanie, animátorské aktivity, výtvarná tvorivá dielnička. Cena je vždy podľa dohody – po odoslaní formulára vás budem kontaktovať a pripravím ponuku na mieru podľa vašich predstáv.</p>
                 <div class="gift-purchase-form" id="gift-form">
-                    <h2>Máte záujem o poukaz? Kontaktujte nás!</h2>
-                    <form
-                      action="https://formspree.io/f/mjkrnvpq"
-                      method="POST"
-                      id="giftCertificateForm"
-                      class="gift-form-freeform"
-                    >
-                      <label>
-                        Your email:
-                        <input type="email" name="email" required>
-                      </label>
-                      <label>
-                        Your message:
-                        <textarea name="message" required placeholder="Ďakujeme, že ste si zakúpili darčekový poukaz na maľovanie na tvár! Vaša objednávka bola úspešne prijatá. Budeme vás čoskoro kontaktovať s ďalšími informáciami. Prajeme krásny deň!"></textarea>
-                      </label>
-                      <button type="submit" class="button button-primary">Send</button>
+                    <h2>Máte záujem o kupón? Vyplňte formulár:</h2>
+                    <form id="giftCertificateForm">
+                        <div class="form-group">
+                            <label for="name">Meno</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefón</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="event">Typ udalosti</label>
+                            <select id="event" name="event" required>
+                                <option value="">Vyberte typ udalosti</option>
+                                <option value="oslava">Narodeniny</option>
+                                <option value="festival">Festival</option>
+                                <option value="firemna">Firemná akcia</option>
+                                <option value="ine">Iná udalosť</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Dátum udalosti</label>
+                            <input type="date" id="date" name="date">
+                        </div>
+                        <div class="form-group">
+                            <label>Vyberte aktivity</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="activities" value="Maľovanie na tvár"> Maľovanie na tvár</label><br>
+                                <label><input type="checkbox" name="activities" value="Trblietavé tetovanie"> Trblietavé tetovanie</label><br>
+                                <label><input type="checkbox" name="activities" value="Animátorské aktivity"> Animátorské aktivity</label><br>
+                                <label><input type="checkbox" name="activities" value="Výtvarná tvorivá dielnička"> Výtvarná tvorivá dielnička</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Správa</label>
+                            <textarea id="message" name="message" required placeholder="Napíšte nám vaše predstavy, otázky alebo špeciálne požiadavky."></textarea>
+                        </div>
+                        <button type="submit" class="button button-primary">Odoslať žiadosť</button>
+                        <div id="formStatus" style="margin-top:1em;"></div>
                     </form>
                     <div class="contact-info">
-                      <h3>Kontakt</h3>
-                      <ul class="contact-list">
-                        <li>
-                          <a href="mailto:klebanovasofia@gmail.com" class="contact-link">klebanovasofia@gmail.com</a>
-                        </li>
-                        <li>
-                          <a href="tel:+421919419072" class="contact-link">+421 919 419 072</a>
-                        </li>
-                        <li>
-                          <a href="https://app.umevia.com/tvor_tvorivy" target="_blank" rel="noopener" class="contact-link">Profil na Umevia</a>
-                        </li>
-                      </ul>
+                        <h3>Kontakt</h3>
+                        <ul class="contact-list">
+                            <li><a href="mailto:klebanovasofia@gmail.com" class="contact-link">klebanovasofia@gmail.com</a></li>
+                            <li><a href="tel:+421919419072" class="contact-link">+421 919 419 072</a></li>
+                            <li><a href="https://app.umevia.com/tvor_tvorivy" target="_blank" rel="noopener" class="contact-link">Profil na Umevia</a></li>
+                        </ul>
                     </div>
                 </div>
-
                 <div class="how-to-redeem">
-                    <h2>Ako poukaz uplatniť?</h2>
-                    <p>Majiteľ poukazu nás jednoducho kontaktuje telefonicky alebo emailom, dohodneme si termín a miesto maľovania. Pri uplatnení stačí predložiť kód poukazu.</p>
+                    <h2>Ako kupón uplatniť?</h2>
+                    <p>Majiteľ kupónu nás jednoducho kontaktuje telefonicky alebo emailom, dohodneme si termín a miesto oslavy. Pri uplatnení stačí predložiť kód kupónu.</p>
                 </div>
             </div>
         </section>
@@ -186,6 +182,36 @@
             backgroundColor: "gray"
           }
         }
+      });
+    </script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      (function() {
+        emailjs.init('8H0u5a6YZnaYDXVQJ');
+      })();
+      document.getElementById('giftCertificateForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var form = this;
+        var formStatus = document.getElementById('formStatus');
+        // Získaj aktivity ako zoznam
+        var activities = Array.from(form.querySelectorAll('input[name="activities"]:checked')).map(cb => cb.value).join(', ');
+        var templateParams = {
+          name: form.name.value,
+          email: form.email.value,
+          phone: form.phone.value,
+          event: form.event.value,
+          date: form.date.value,
+          activities: activities,
+          message: form.message.value
+        };
+        emailjs.send('service_17noos6', 'template_wa3c4zc', templateParams)
+          .then(function(response) {
+            formStatus.innerHTML = '<span style="color:green;">Vaša žiadosť bola úspešne odoslaná. Budem vás čoskoro kontaktovať.</span>';
+            form.reset();
+          }, function(error) {
+            formStatus.innerHTML = '<span style="color:red;">Nastala chyba pri odosielaní. Skúste to prosím znova alebo nás kontaktujte priamo emailom.</span>';
+          });
       });
     </script>
 </body>
