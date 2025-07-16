@@ -358,6 +358,20 @@
         </svg>
     </button>
 
+    <!-- Discount Popup Banner -->
+    <div id="discountPopup" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.45); z-index:9999; align-items:center; justify-content:center;">
+      <div style="background:#fff; max-width:350px; width:90%; margin:auto; border-radius:16px; box-shadow:0 8px 32px rgba(0,0,0,0.18); padding:2em 1.5em 1.5em 1.5em; position:relative; text-align:center;">
+        <button id="closeDiscountPopup" aria-label="Zavrieť" style="position:absolute; top:12px; right:12px; background:none; border:none; font-size:1.5em; color:#d81b60; cursor:pointer;">&times;</button>
+        <h2 style="color:#d81b60; margin-bottom:0.5em;">Získajte zľavu!</h2>
+        <p style="margin-bottom:1em;">Zadajte svoj email a pošleme vám špeciálnu ponuku na maľovanie na tvár.</p>
+        <form id="discountPopupForm">
+          <input type="email" id="discountEmail" name="email" placeholder="Váš email" required style="width:90%;padding:0.5em;margin-bottom:0.7em;border:1px solid #ccc;border-radius:6px;">
+          <button type="submit" style="width:100%;background:#d81b60;color:#fff;padding:0.6em 0;border:none;border-radius:6px;font-size:1em;cursor:pointer;">Chcem zľavu</button>
+          <div id="discountPopupStatus" style="margin-top:0.7em;font-size:0.95em;"></div>
+        </form>
+      </div>
+    </div>
+
     <!-- Scripts -->
     <script src="js/main.js" defer></script>
     <!-- EmailJS SDK -->
@@ -366,6 +380,7 @@
       (function() {
         emailjs.init('8H0u5a6YZnaYDXVQJ');
       })();
+      // Kontakt formulár
       document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
         var form = this;
@@ -384,6 +399,35 @@
             form.reset();
           }, function(error) {
             formStatus.innerHTML = '<span style="color:red;">Nastala chyba pri odosielaní. Skúste to prosím znova alebo nás kontaktujte priamo emailom.</span>';
+          });
+      });
+      // Discount popup
+      setTimeout(function() {
+        var popup = document.getElementById('discountPopup');
+        if (popup) popup.style.display = 'flex';
+      }, 3000);
+      document.getElementById('closeDiscountPopup').onclick = function() {
+        document.getElementById('discountPopup').style.display = 'none';
+      };
+      document.getElementById('discountPopupForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = document.getElementById('discountEmail').value;
+        var status = document.getElementById('discountPopupStatus');
+        var templateParams = {
+          name: '',
+          email: email,
+          phone: '',
+          event: '',
+          date: '',
+          message: 'Toto je žiadosť o zľavu zo zľavového banneru na stránke.'
+        };
+        emailjs.send('service_17noos6', 'template_6e2dpfc', templateParams)
+          .then(function(response) {
+            status.innerHTML = '<span style="color:green;">Ďakujeme! Vaša žiadosť o zľavu bola odoslaná.</span>';
+            document.getElementById('discountPopupForm').reset();
+            setTimeout(function(){ document.getElementById('discountPopup').style.display = 'none'; }, 2000);
+          }, function(error) {
+            status.innerHTML = '<span style="color:red;">Nastala chyba pri odosielaní. Skúste to prosím znova.</span>';
           });
       });
     </script>
