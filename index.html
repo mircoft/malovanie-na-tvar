@@ -195,7 +195,7 @@
         <div class="container">
             <h2 class="section-title">Kontakt</h2>
             <div class="contact-grid">
-                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mjkrnvpq" method="POST">
+                <form class="contact-form" id="contactForm">
                     <input type="hidden" name="_replyto" value="klebanovasofia@gmail.com">
                     <div class="form-group">
                         <label for="name">Meno</label>
@@ -233,6 +233,7 @@
                             <path d="M5 12h14M19 12l-7-7M19 12l-7 7"/>
                         </svg>
                     </button>
+                    <div id="contactFormStatus" style="margin-top:1em;"></div>
                 </form>
                 
                 <div class="contact-info">
@@ -359,6 +360,33 @@
 
     <!-- Scripts -->
     <script src="js/main.js" defer></script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      (function() {
+        emailjs.init('8H0u5a6YZnaYDXVQJ');
+      })();
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var form = this;
+        var formStatus = document.getElementById('contactFormStatus');
+        var templateParams = {
+          name: form.name.value,
+          email: form.email.value,
+          phone: form.phone.value,
+          event: form.event.value,
+          date: form.date.value,
+          message: form.message.value
+        };
+        emailjs.send('service_17noos6', 'template_6e2dpfc', templateParams)
+          .then(function(response) {
+            formStatus.innerHTML = '<span style="color:green;">Vaša správa bola úspešne odoslaná. Budem vás čoskoro kontaktovať.</span>';
+            form.reset();
+          }, function(error) {
+            formStatus.innerHTML = '<span style="color:red;">Nastala chyba pri odosielaní. Skúste to prosím znova alebo nás kontaktujte priamo emailom.</span>';
+          });
+      });
+    </script>
 
     <!-- Butterflies Container -->
     <div class="butterflies-container">
