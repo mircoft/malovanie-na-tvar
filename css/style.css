@@ -450,6 +450,24 @@ a:hover {
     background-color: var(--color-background-alt);
 }
 
+.reviews-widget-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: visible;
+}
+
+.reviews-widget-wrap .embedsocial-hashtag {
+    width: 100%;
+    max-width: 1100px;
+    overflow: visible;
+}
+
+.reviews-widget-wrap iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
 .reviews-slider {
     position: relative;
     overflow: hidden;
