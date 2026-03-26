@@ -174,36 +174,25 @@
                     </div>
                 </div>
 
-                <!-- Custom Instagram carousel (auto rotates reels/posts) -->
-                <div class="ig-carousel" id="igCarousel">
-                    <div class="ig-carousel-stage">
-                        <div class="ig-carousel-item is-active">
-                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-h-eUVI4LZ/" data-instgrm-version="14">
-                                <a href="https://www.instagram.com/reel/C-h-eUVI4LZ/"></a>
-                            </blockquote>
-                        </div>
-                        <div class="ig-carousel-item">
-                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-h4iU5oX-J/" data-instgrm-version="14">
-                                <a href="https://www.instagram.com/reel/C-h4iU5oX-J/"></a>
-                            </blockquote>
-                        </div>
-                    </div>
-
-                    <div class="ig-carousel-controls">
-                        <button type="button" class="ig-carousel-btn" id="igCarouselPrev" aria-label="Predchádzajúci">
-                            &#8592;
-                        </button>
-                        <button type="button" class="ig-carousel-btn" id="igCarouselNext" aria-label="Ďalší">
-                            &#8594;
-                        </button>
-                    </div>
-
-                    <div class="ig-carousel-hint" aria-live="polite">
-                        Posty sa menia automaticky
+                <!-- Instagram feed cez EmbedSocial (účet tvor_tvorivy; kód z dashboardu EmbedSocial) -->
+                <div class="instagram-embed-wrap">
+                    <div class="embedsocial-hashtag" data-ref="99436973fd6f1c58324e679c42bd85ef9e2259ae">
+                        <a class="feed-powered-by-es feed-powered-by-es-feed-img es-widget-branding" href="https://embedsocial.com/instagram-widget/" target="_blank" rel="noopener noreferrer" title="Instagram widget">
+                            <img src="https://embedsocial.com/cdn/icon/embedsocial-logo.webp" alt="EmbedSocial">
+                            <div class="es-widget-branding-text">Instagram widget</div>
+                        </a>
                     </div>
                 </div>
-
-                <script async src="https://www.instagram.com/embed.js"></script>
+                <script>
+                    (function(d, s, id) {
+                        var js;
+                        if (d.getElementById(id)) { return; }
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = "https://embedsocial.com/cdn/ht.js";
+                        d.getElementsByTagName("head")[0].appendChild(js);
+                    }(document, "script", "EmbedSocialHashtagScript"));
+                </script>
             </div>
         </section>
 
@@ -273,16 +262,6 @@
                         <div class="es-widget-branding-text">Embed Google reviews</div>
                     </a>
                 </div>
-                <script>
-                    (function(d, s, id) {
-                        var js;
-                        if (d.getElementById(id)) { return; }
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = "https://embedsocial.com/cdn/ht.js";
-                        d.getElementsByTagName("head")[0].appendChild(js);
-                    }(document, "script", "EmbedSocialHashtagScript"));
-                </script>
             </div>
             </div>
         </section>

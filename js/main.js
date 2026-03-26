@@ -395,35 +395,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
-
-// Instagram carousel (auto-rotate)
-document.addEventListener('DOMContentLoaded', () => {
-  const carousel = document.getElementById('igCarousel');
-  const items = carousel ? Array.from(carousel.querySelectorAll('.ig-carousel-item')) : [];
-  const prevBtn = document.getElementById('igCarouselPrev');
-  const nextBtn = document.getElementById('igCarouselNext');
-
-  if (!carousel || items.length === 0) return;
-
-  let currentIndex = 0;
-  const intervalMs = 7500; // slow rotation
-
-  function show(index) {
-    currentIndex = (index + items.length) % items.length;
-    items.forEach((el, idx) => el.classList.toggle('is-active', idx === currentIndex));
-  }
-
-  prevBtn?.addEventListener('click', () => show(currentIndex - 1));
-  nextBtn?.addEventListener('click', () => show(currentIndex + 1));
-
-  // Auto rotate
-  let timer = window.setInterval(() => show(currentIndex + 1), intervalMs);
-
-  // Reset timer on manual interaction
-  [prevBtn, nextBtn].forEach((btn) => {
-    btn?.addEventListener('click', () => {
-      window.clearInterval(timer);
-      timer = window.setInterval(() => show(currentIndex + 1), intervalMs);
-    });
-  });
-});
