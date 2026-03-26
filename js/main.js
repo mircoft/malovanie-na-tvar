@@ -399,19 +399,33 @@ document.addEventListener('DOMContentLoaded', function() {
 // Instagram horizontal slider (auto-rotate)
 document.addEventListener('DOMContentLoaded', () => {
   const slider = document.getElementById('igSlider');
+  const viewport = slider ? slider.querySelector('.ig-slider-viewport') : null;
   const track = document.getElementById('igSliderTrack');
   const slides = track ? Array.from(track.querySelectorAll('.ig-slide')) : [];
   const prevBtn = document.getElementById('igSliderPrev');
   const nextBtn = document.getElementById('igSliderNext');
 
-  if (!slider || !track || slides.length === 0) return;
+  if (!slider || !viewport || !track || slides.length === 0) return;
 
   let currentIndex = 0;
   const intervalMs = 7000;
   let timer = null;
 
   function updatePosition() {
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    const active = slides[currentIndex];
+    if (!active) return;
+
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle('is-active', idx === currentIndex);
+    });
+
+    const viewportRect = viewport.getBoundingClientRect();
+    const trackRect = track.getBoundingClientRect();
+    const activeRect = active.getBoundingClientRect();
+    const activeCenterFromTrackLeft = activeRect.left - trackRect.left + (activeRect.width / 2);
+    const viewportCenter = viewportRect.width / 2;
+    const targetTranslate = viewportCenter - activeCenterFromTrackLeft;
+    track.style.transform = `translateX(${targetTranslate}px)`;
   }
 
   function goTo(index) {
@@ -444,6 +458,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   slider.addEventListener('mouseenter', pauseAuto);
   slider.addEventListener('mouseleave', startAuto);
+  window.addEventListener('resize', updatePosition);
 
   updatePosition();
   startAuto();
