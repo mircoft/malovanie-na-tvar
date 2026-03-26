@@ -99,6 +99,38 @@
                     <div class="service-icon">🏢</div>
                     <h3>Firemné akcie</h3>
                     <p>Maľovanie na firemných eventoch a teambuildingoch</p>
+                    <p style="margin-top: 1rem; font-weight: 500; color: #d81b60;">
+                        Ukážky z decathlonovej akcie
+                    </p>
+                    <div class="album-grid" aria-label="Foto album z firemných akcií">
+                        <a class="album-item" href="images/decathlon-akcia/DSC07560.png" target="_blank" rel="noopener">
+                            <img src="images/decathlon-akcia/DSC07560.png" alt="Foto z akcie - DSC07560" loading="lazy">
+                        </a>
+                        <a class="album-item" href="images/decathlon-akcia/DSC07562.png" target="_blank" rel="noopener">
+                            <img src="images/decathlon-akcia/DSC07562.png" alt="Foto z akcie - DSC07562" loading="lazy">
+                        </a>
+                        <a class="album-item" href="images/decathlon-akcia/DSC07563.png" target="_blank" rel="noopener">
+                            <img src="images/decathlon-akcia/DSC07563.png" alt="Foto z akcie - DSC07563" loading="lazy">
+                        </a>
+                        <a class="album-item" href="images/decathlon-akcia/DSC07564.png" target="_blank" rel="noopener">
+                            <img src="images/decathlon-akcia/DSC07564.png" alt="Foto z akcie - DSC07564" loading="lazy">
+                        </a>
+                        <a class="album-item" href="images/decathlon-akcia/DSC07568.png" target="_blank" rel="noopener">
+                            <img src="images/decathlon-akcia/DSC07568.png" alt="Foto z akcie - DSC07568" loading="lazy">
+                        </a>
+                        <a class="album-item" href="images/decathlon-akcia/DSC07570.png" target="_blank" rel="noopener">
+                            <img src="images/decathlon-akcia/DSC07570.png" alt="Foto z akcie - DSC07570" loading="lazy">
+                        </a>
+                        <a class="album-item" href="images/decathlon-akcia/DSC07571.png" target="_blank" rel="noopener">
+                            <img src="images/decathlon-akcia/DSC07571.png" alt="Foto z akcie - DSC07571" loading="lazy">
+                        </a>
+                        <a class="album-item" href="images/decathlon-akcia/DSC07578.png" target="_blank" rel="noopener">
+                            <img src="images/decathlon-akcia/DSC07578.png" alt="Foto z akcie - DSC07578" loading="lazy">
+                        </a>
+                        <a class="album-item" href="images/decathlon-akcia/DSC07580.png" target="_blank" rel="noopener">
+                            <img src="images/decathlon-akcia/DSC07580.png" alt="Foto z akcie - DSC07580" loading="lazy">
+                        </a>
+                    </div>
                 </div>
                 </div>
             </div>
@@ -131,20 +163,6 @@
             <div class="container">
                 <h2 class="section-title" style="text-align:center; color:#d81b60;">Sledujte nás na Instagrame</h2>
 
-                <div class="instagram-embed">
-                    <div style="display:flex; justify-content:center;">
-                        <iframe
-                            id="snapwidgetFrame"
-                            src="https://snapwidget.com/embed/1061872"
-                            class="snapwidget-widget"
-                            allowtransparency="true"
-                            frameborder="0"
-                            scrolling="no"
-                            style="border:none; overflow:hidden; width:100%; max-width:700px; height:320px;"
-                        ></iframe>
-                    </div>
-                </div>
-
                 <div class="instagram-links" style="text-align:center; margin-top:1em;">
                     <a href="https://www.instagram.com/tvor_tvorivy/" target="_blank" rel="noopener" class="button button-secondary" style="text-decoration:none;">
                         @tvor_tvorivy na Instagrame
@@ -156,18 +174,36 @@
                     </div>
                 </div>
 
-                <!-- Fallback: ak SnapWidget z nejakého dôvodu nezobrazí feed, ukážeme aspoň konkrétne reels -->
-                <div id="instagramFallback" style="display:none; margin-top:1.75em;">
-                    <div class="instagram-fallback-grid">
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-h-eUVI4LZ/" data-instgrm-version="14">
-                            <a href="https://www.instagram.com/reel/C-h-eUVI4LZ/"></a>
-                        </blockquote>
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-h4iU5oX-J/" data-instgrm-version="14">
-                            <a href="https://www.instagram.com/reel/C-h4iU5oX-J/"></a>
-                        </blockquote>
+                <!-- Custom Instagram carousel (auto rotates reels/posts) -->
+                <div class="ig-carousel" id="igCarousel">
+                    <div class="ig-carousel-stage">
+                        <div class="ig-carousel-item is-active">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-h-eUVI4LZ/" data-instgrm-version="14">
+                                <a href="https://www.instagram.com/reel/C-h-eUVI4LZ/"></a>
+                            </blockquote>
+                        </div>
+                        <div class="ig-carousel-item">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-h4iU5oX-J/" data-instgrm-version="14">
+                                <a href="https://www.instagram.com/reel/C-h4iU5oX-J/"></a>
+                            </blockquote>
+                        </div>
                     </div>
-                    <script async src="https://www.instagram.com/embed.js"></script>
+
+                    <div class="ig-carousel-controls">
+                        <button type="button" class="ig-carousel-btn" id="igCarouselPrev" aria-label="Predchádzajúci">
+                            &#8592;
+                        </button>
+                        <button type="button" class="ig-carousel-btn" id="igCarouselNext" aria-label="Ďalší">
+                            &#8594;
+                        </button>
+                    </div>
+
+                    <div class="ig-carousel-hint" aria-live="polite">
+                        Posty sa menia automaticky
+                    </div>
                 </div>
+
+                <script async src="https://www.instagram.com/embed.js"></script>
             </div>
         </section>
 
@@ -230,35 +266,24 @@
     <section id="recenzie" class="reviews">
         <div class="container">
             <h2 class="section-title">Recenzie</h2>
-            <div class="reviews-slider">
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Úžasné maľovanie na tvár! Deti boli nadšené a maľovanie vydržalo celý deň. Profesionálny prístup a krásne výsledky."</p>
-                    <div class="review-author">Mária K., Bratislava</div>
+            <div style="display:flex; justify-content:center;">
+                <div class="embedsocial-hashtag" data-ref="acde774fd7d7c1e24f455add93a4ec7da3f0931d">
+                    <a class="feed-powered-by-es feed-powered-by-es-feed-img es-widget-branding" href="https://embedsocial.com/google-reviews-widget/" target="_blank" title="Embed Google reviews">
+                        <img src="https://embedsocial.com/cdn/icon/embedsocial-logo.webp" alt="EmbedSocial">
+                        <div class="es-widget-branding-text">Embed Google reviews</div>
+                    </a>
                 </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Najlepšia maliarka na tvár, akú sme mali! Deti si to užili a maľovanie bolo nádherne detailné. Určite odporúčam!"</p>
-                    <div class="review-author">Jana M., Košice</div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Sofia je neuveriteľne talentovaná! Z mojej dcérky vykúzlila nádhernú motýliu vílu. Vrelo odporúčam na každú detskú oslavu."</p>
-                    <div class="review-author">Peter S., Trnava</div>
-                </div>
-                    </div>
-            <div class="reviews-controls">
-                <button class="slider-prev" aria-label="Predchádzajúca recenzia">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M15 18l-6-6 6-6"/>
-                    </svg>
-                </button>
-                <button class="slider-next" aria-label="Ďalšia recenzia">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M9 18l6-6-6-6"/>
-                    </svg>
-                </button>
-                </div>
+                <script>
+                    (function(d, s, id) {
+                        var js;
+                        if (d.getElementById(id)) { return; }
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = "https://embedsocial.com/cdn/ht.js";
+                        d.getElementsByTagName("head")[0].appendChild(js);
+                    }(document, "script", "EmbedSocialHashtagScript"));
+                </script>
+            </div>
             </div>
         </section>
 

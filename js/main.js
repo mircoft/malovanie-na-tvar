@@ -101,7 +101,24 @@ if (galleryFilters && galleryGrid) {
             title: 'Smolenice 3',
             description: 'Maľovanie na tvár - Smolenice'
         },
-        // Pridajte ďalšie obrázky podľa potreby
+        {
+            category: 'festival',
+            image: 'images/smolenice4.jpg',
+            title: 'Smolenice 4',
+            description: 'Maľovanie na tvár - festival'
+        },
+        {
+            category: 'festival',
+            image: 'images/smolenice5.jpg',
+            title: 'Smolenice 5',
+            description: 'Maľovanie na tvár - festival'
+        },
+        {
+            category: 'firemna',
+            image: 'images/smolenice6.jpg',
+            title: 'Smolenice 6',
+            description: 'Maľovanie na tvár - firemná akcia'
+        }
     ];
 
     function createGalleryItem(item) {
@@ -379,24 +396,34 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Instagram fallback (SnapWidget)
-// Ak sa SnapWidget iframe nezobrazí (napr. kvôli blokovaniu/timeoutu), ukážeme náhradné embed reels.
+// Instagram carousel (auto-rotate)
 document.addEventListener('DOMContentLoaded', () => {
-  const snapwidgetFrame = document.getElementById('snapwidgetFrame');
-  const instagramFallback = document.getElementById('instagramFallback');
+  const carousel = document.getElementById('igCarousel');
+  const items = carousel ? Array.from(carousel.querySelectorAll('.ig-carousel-item')) : [];
+  const prevBtn = document.getElementById('igCarouselPrev');
+  const nextBtn = document.getElementById('igCarouselNext');
 
-  if (!snapwidgetFrame || !instagramFallback) return;
+  if (!carousel || items.length === 0) return;
 
-  let snapwidgetLoaded = false;
-  snapwidgetFrame.addEventListener('load', () => {
-    snapwidgetLoaded = true;
-    instagramFallback.style.display = 'none';
+  let currentIndex = 0;
+  const intervalMs = 7500; // slow rotation
+
+  function show(index) {
+    currentIndex = (index + items.length) % items.length;
+    items.forEach((el, idx) => el.classList.toggle('is-active', idx === currentIndex));
+  }
+
+  prevBtn?.addEventListener('click', () => show(currentIndex - 1));
+  nextBtn?.addEventListener('click', () => show(currentIndex + 1));
+
+  // Auto rotate
+  let timer = window.setInterval(() => show(currentIndex + 1), intervalMs);
+
+  // Reset timer on manual interaction
+  [prevBtn, nextBtn].forEach((btn) => {
+    btn?.addEventListener('click', () => {
+      window.clearInterval(timer);
+      timer = window.setInterval(() => show(currentIndex + 1), intervalMs);
+    });
   });
-
-  // Nevieme spoľahlivo zistiť obsah iframe (cross-origin), preto použijeme timeout.
-  window.setTimeout(() => {
-    if (!snapwidgetLoaded) {
-      instagramFallback.style.display = 'block';
-    }
-  }, 6000);
 });

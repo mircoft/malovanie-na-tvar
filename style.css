@@ -1575,3 +1575,13 @@ h2 {
     margin-bottom: 1rem;
 }
 
+.blog-post-image {
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+    display: block;
+}
+
