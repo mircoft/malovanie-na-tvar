@@ -1516,3 +1516,62 @@ h2 {
 
 /* iPhone 12 Section Adjustments (already included in media query) */
 
+/* --- Blog page styles --- */
+.blog-page-main {
+    padding-bottom: 3rem;
+}
+
+.blog-listing .container {
+    max-width: 900px;
+}
+
+.blog-posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.blog-post-summary {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: var(--apple-blur);
+    -webkit-backdrop-filter: var(--apple-blur);
+    border: var(--apple-border);
+    border-radius: 20px;
+    box-shadow: var(--apple-shadow);
+    padding: 1.5rem 1.25rem;
+}
+
+.blog-post-summary h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.35rem;
+    color: var(--text);
+}
+
+.blog-post-summary h4 {
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+
+.blog-post-summary p {
+    margin-bottom: 0.85rem;
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.blog-post-summary ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.blog-post-summary li {
+    margin-bottom: 0.5rem;
+}
+
+.blog-post-summary ol {
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+}
+

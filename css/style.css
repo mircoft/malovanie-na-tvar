@@ -1123,3 +1123,42 @@ a:hover {
     display: block;
   }
 } 
+
+/* Instagram fallback + Booking banner */
+.instagram-fallback-grid {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.instagram-fallback-grid .instagram-media {
+    width: 100%;
+    max-width: 360px;
+}
+
+.booking-banner-card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(233, 30, 99, 0.18);
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+}
+
+.booking-banner-content h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.booking-banner-actions .button {
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    .booking-banner-card {
+        padding: 1.25rem;
+        border-radius: 1.25rem;
+    }
+}

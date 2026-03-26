@@ -377,4 +377,26 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-}); 
+});
+
+// Instagram fallback (SnapWidget)
+// Ak sa SnapWidget iframe nezobrazí (napr. kvôli blokovaniu/timeoutu), ukážeme náhradné embed reels.
+document.addEventListener('DOMContentLoaded', () => {
+  const snapwidgetFrame = document.getElementById('snapwidgetFrame');
+  const instagramFallback = document.getElementById('instagramFallback');
+
+  if (!snapwidgetFrame || !instagramFallback) return;
+
+  let snapwidgetLoaded = false;
+  snapwidgetFrame.addEventListener('load', () => {
+    snapwidgetLoaded = true;
+    instagramFallback.style.display = 'none';
+  });
+
+  // Nevieme spoľahlivo zistiť obsah iframe (cross-origin), preto použijeme timeout.
+  window.setTimeout(() => {
+    if (!snapwidgetLoaded) {
+      instagramFallback.style.display = 'block';
+    }
+  }, 6000);
+});

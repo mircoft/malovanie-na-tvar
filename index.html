@@ -22,6 +22,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <meta name="facebook-domain-verification" content="sdmwsdtaa96l3mso5uqdxcxuk2ad8a" />
 </head>
 <body>
     <!-- Header -->
@@ -46,6 +47,7 @@
                         <li><a href="index.html#cennik">Cenník</a></li>
                         <li><a href="index.html#recenzie">Recenzie</a></li>
                         <li><a href="index.html#kontakt">Kontakt</a></li>
+                        <li><a href="blog.html">BLOG</a></li>
                         <li><a href="gift-certificate.html">Darčekový poukaz</a></li>
                 </ul>
                 </div>
@@ -128,11 +130,43 @@
         <section class="instagram-feed" style="padding: 2em 0; background: #faf6fa;">
             <div class="container">
                 <h2 class="section-title" style="text-align:center; color:#d81b60;">Sledujte nás na Instagrame</h2>
-                <div style="display:flex; justify-content:center;">
-                    <iframe src="https://snapwidget.com/embed/1061872" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; max-width:700px; height:320px;"></iframe>
+
+                <div class="instagram-embed">
+                    <div style="display:flex; justify-content:center;">
+                        <iframe
+                            id="snapwidgetFrame"
+                            src="https://snapwidget.com/embed/1061872"
+                            class="snapwidget-widget"
+                            allowtransparency="true"
+                            frameborder="0"
+                            scrolling="no"
+                            style="border:none; overflow:hidden; width:100%; max-width:700px; height:320px;"
+                        ></iframe>
+                    </div>
                 </div>
-                <div style="text-align:center; margin-top:1em;">
-                    <a href="https://www.instagram.com/tvor_tvorivy/" target="_blank" rel="noopener" style="color:#d81b60; font-weight:500; text-decoration:underline;">@tvor_tvorivy na Instagrame</a>
+
+                <div class="instagram-links" style="text-align:center; margin-top:1em;">
+                    <a href="https://www.instagram.com/tvor_tvorivy/" target="_blank" rel="noopener" class="button button-secondary" style="text-decoration:none;">
+                        @tvor_tvorivy na Instagrame
+                    </a>
+                    <div style="margin-top:0.75em; font-size:1rem;">
+                        <a href="https://www.instagram.com/stories/tvor_tvorivy/" target="_blank" rel="noopener" style="color:#d81b60; font-weight:500; text-decoration:underline;">
+                            Pozrite si príbehy na Instagrame
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Fallback: ak SnapWidget z nejakého dôvodu nezobrazí feed, ukážeme aspoň konkrétne reels -->
+                <div id="instagramFallback" style="display:none; margin-top:1.75em;">
+                    <div class="instagram-fallback-grid">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-h-eUVI4LZ/" data-instgrm-version="14">
+                            <a href="https://www.instagram.com/reel/C-h-eUVI4LZ/"></a>
+                        </blockquote>
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-h4iU5oX-J/" data-instgrm-version="14">
+                            <a href="https://www.instagram.com/reel/C-h4iU5oX-J/"></a>
+                        </blockquote>
+                    </div>
+                    <script async src="https://www.instagram.com/embed.js"></script>
                 </div>
             </div>
         </section>
@@ -166,6 +200,31 @@
             <p style="margin-top:2rem; text-align:center; font-size:1.1em; color:#d81b60;">Ceny sa môžu líšiť podľa miesta a typu akcie. Pre presnú ponuku ma kontaktujte.</p>
             </div>
         </section>
+
+    <!-- Booking Banner -->
+    <section class="booking-banner" style="padding: 3rem 0; background: linear-gradient(120deg, #fff8f9 0%, #ffe3ec 100%);">
+        <div class="container">
+            <div class="booking-banner-card">
+                <div class="booking-banner-content">
+                    <h2 style="margin:0; text-align:left;">Vybavte si maľovanie</h2>
+                    <p style="margin:0.75rem 0 0 0; text-align:left; color: inherit; max-width: 720px;">
+                        Vyberte si termín a pošlite rezerváciu cez Umevia. Rýchlo si skontrolujeme dostupnosť a dohodneme detaily.
+                    </p>
+                    <div class="booking-banner-actions" style="margin-top:1.25rem; display:flex; gap:1rem; flex-wrap:wrap;">
+                        <a class="button button-primary" href="https://app.umevia.com/tvor_tvorivy" target="_blank" rel="noopener noreferrer">
+                            Rezervovať termín
+                            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M5 12h14M19 12l-7-7M19 12l-7 7"/>
+                            </svg>
+                        </a>
+                        <a class="button button-secondary" href="#kontakt" style="text-decoration:none;">
+                            Kontaktovať ma
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Reviews Section -->
     <section id="recenzie" class="reviews">
@@ -303,7 +362,7 @@
         </section>
 
     <!-- FAQ Section -->
-    <section class="faq">
+    <section id="faq" class="faq">
         <div class="container">
             <h2 class="section-title">Časté otázky</h2>
             <div class="faq-grid">
