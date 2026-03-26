@@ -395,3 +395,56 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Instagram horizontal slider (auto-rotate)
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.getElementById('igSlider');
+  const track = document.getElementById('igSliderTrack');
+  const slides = track ? Array.from(track.querySelectorAll('.ig-slide')) : [];
+  const prevBtn = document.getElementById('igSliderPrev');
+  const nextBtn = document.getElementById('igSliderNext');
+
+  if (!slider || !track || slides.length === 0) return;
+
+  let currentIndex = 0;
+  const intervalMs = 7000;
+  let timer = null;
+
+  function updatePosition() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  function goTo(index) {
+    currentIndex = (index + slides.length) % slides.length;
+    updatePosition();
+  }
+
+  function next() {
+    goTo(currentIndex + 1);
+  }
+
+  function startAuto() {
+    window.clearInterval(timer);
+    timer = window.setInterval(next, intervalMs);
+  }
+
+  function pauseAuto() {
+    window.clearInterval(timer);
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    goTo(currentIndex - 1);
+    startAuto();
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    next();
+    startAuto();
+  });
+
+  slider.addEventListener('mouseenter', pauseAuto);
+  slider.addEventListener('mouseleave', startAuto);
+
+  updatePosition();
+  startAuto();
+});
