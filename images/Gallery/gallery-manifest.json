@@ -1,0 +1,84 @@
+﻿{
+    "items":  [
+                  {
+                      "category":  "festival",
+                      "image":  "images/Gallery/Festivaly/Smolenice/smolenice0.jpg",
+                      "title":  "smolenice0"
+                  },
+                  {
+                      "category":  "festival",
+                      "image":  "images/Gallery/Festivaly/Smolenice/smolenice1.jpg",
+                      "title":  "smolenice1"
+                  },
+                  {
+                      "category":  "festival",
+                      "image":  "images/Gallery/Festivaly/Smolenice/smolenice2.jpg",
+                      "title":  "smolenice2"
+                  },
+                  {
+                      "category":  "festival",
+                      "image":  "images/Gallery/Festivaly/Smolenice/smolenice3.jpg",
+                      "title":  "smolenice3"
+                  },
+                  {
+                      "category":  "festival",
+                      "image":  "images/Gallery/Festivaly/Smolenice/smolenice4.jpg",
+                      "title":  "smolenice4"
+                  },
+                  {
+                      "category":  "festival",
+                      "image":  "images/Gallery/Festivaly/Smolenice/smolenice5.jpg",
+                      "title":  "smolenice5"
+                  },
+                  {
+                      "category":  "festival",
+                      "image":  "images/Gallery/Festivaly/Smolenice/smolenice6.jpg",
+                      "title":  "smolenice6"
+                  },
+                  {
+                      "category":  "firemna",
+                      "image":  "images/Gallery/Firemne/decathlon-akcia/DSC07560.png",
+                      "title":  "DSC07560"
+                  },
+                  {
+                      "category":  "firemna",
+                      "image":  "images/Gallery/Firemne/decathlon-akcia/DSC07562.png",
+                      "title":  "DSC07562"
+                  },
+                  {
+                      "category":  "firemna",
+                      "image":  "images/Gallery/Firemne/decathlon-akcia/DSC07563.png",
+                      "title":  "DSC07563"
+                  },
+                  {
+                      "category":  "firemna",
+                      "image":  "images/Gallery/Firemne/decathlon-akcia/DSC07564.png",
+                      "title":  "DSC07564"
+                  },
+                  {
+                      "category":  "firemna",
+                      "image":  "images/Gallery/Firemne/decathlon-akcia/DSC07568.png",
+                      "title":  "DSC07568"
+                  },
+                  {
+                      "category":  "firemna",
+                      "image":  "images/Gallery/Firemne/decathlon-akcia/DSC07570.png",
+                      "title":  "DSC07570"
+                  },
+                  {
+                      "category":  "firemna",
+                      "image":  "images/Gallery/Firemne/decathlon-akcia/DSC07571.png",
+                      "title":  "DSC07571"
+                  },
+                  {
+                      "category":  "firemna",
+                      "image":  "images/Gallery/Firemne/decathlon-akcia/DSC07578.png",
+                      "title":  "DSC07578"
+                  },
+                  {
+                      "category":  "firemna",
+                      "image":  "images/Gallery/Firemne/decathlon-akcia/DSC07580.png",
+                      "title":  "DSC07580"
+                  }
+              ]
+}

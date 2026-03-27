@@ -74,52 +74,29 @@ if (galleryFilters && galleryGrid) {
     let currentPage = 1;
     const itemsPerPage = 6;
     let isLoading = false;
+    let galleryItems = [];
 
-    // Sample gallery items (replace with your actual data)
-    const galleryItems = [
-        {
-            category: 'oslava',
-            image: 'images/smolenice0.jpg',
-            title: 'Smolenice 0',
-            description: 'Maľovanie na tvár - Smolenice'
-        },
-        {
-            category: 'oslava',
-            image: 'images/smolenice1.jpg',
-            title: 'Smolenice 1',
-            description: 'Maľovanie na tvár - Smolenice'
-        },
-        {
-            category: 'oslava',
-            image: 'images/smolenice2.jpg',
-            title: 'Smolenice 2',
-            description: 'Maľovanie na tvár - Smolenice'
-        },
-        {
-            category: 'oslava',
-            image: 'images/smolenice3.jpg',
-            title: 'Smolenice 3',
-            description: 'Maľovanie na tvár - Smolenice'
-        },
-        {
-            category: 'festival',
-            image: 'images/smolenice4.jpg',
-            title: 'Smolenice 4',
-            description: 'Maľovanie na tvár - festival'
-        },
-        {
-            category: 'festival',
-            image: 'images/smolenice5.jpg',
-            title: 'Smolenice 5',
-            description: 'Maľovanie na tvár - festival'
-        },
-        {
-            category: 'firemna',
-            image: 'images/smolenice6.jpg',
-            title: 'Smolenice 6',
-            description: 'Maľovanie na tvár - firemná akcia'
-        }
-    ];
+    const categoryMap = {
+        sukromne: 'oslava',
+        oslava: 'oslava',
+        festival: 'festival',
+        firemne: 'firemna',
+        firemna: 'firemna'
+    };
+
+    const fallbackGalleryItems = [
+        { category: 'festival', image: 'images/Gallery/Festivaly/Smolenice/smolenice0.jpg', title: 'Smolenice 0' },
+        { category: 'festival', image: 'images/Gallery/Festivaly/Smolenice/smolenice1.jpg', title: 'Smolenice 1' },
+        { category: 'festival', image: 'images/Gallery/Festivaly/Smolenice/smolenice2.jpg', title: 'Smolenice 2' },
+        { category: 'festival', image: 'images/Gallery/Festivaly/Smolenice/smolenice3.jpg', title: 'Smolenice 3' },
+        { category: 'festival', image: 'images/Gallery/Festivaly/Smolenice/smolenice4.jpg', title: 'Smolenice 4' },
+        { category: 'firemna', image: 'images/Gallery/Firemne/decathlon-akcia/DSC07560.png', title: 'Decathlon 1' },
+        { category: 'firemna', image: 'images/Gallery/Firemne/decathlon-akcia/DSC07562.png', title: 'Decathlon 2' },
+        { category: 'firemna', image: 'images/Gallery/Firemne/decathlon-akcia/DSC07563.png', title: 'Decathlon 3' }
+    ].map((item) => ({
+        ...item,
+        description: `Maľovanie na tvár - ${item.category}`
+    }));
 
     function createGalleryItem(item) {
         return `
@@ -176,8 +153,38 @@ if (galleryFilters && galleryGrid) {
         }, 300);
     });
 
-    // Initial load
-    filterGallery();
+    async function initGallery() {
+        try {
+            const response = await fetch('images/Gallery/gallery-manifest.json', { cache: 'no-store' });
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const manifest = await response.json();
+            const items = Array.isArray(manifest?.items) ? manifest.items : [];
+
+            galleryItems = items
+                .map((item, index) => {
+                    const normalizedCategory = categoryMap[String(item.category || '').toLowerCase()];
+                    const image = item.image || item.src || '';
+                    if (!normalizedCategory || !image) return null;
+                    return {
+                        category: normalizedCategory,
+                        image,
+                        title: item.title || `Galéria ${index + 1}`,
+                        description: item.description || `Maľovanie na tvár - ${normalizedCategory}`
+                    };
+                })
+                .filter(Boolean);
+        } catch (error) {
+            galleryItems = [];
+        }
+
+        if (galleryItems.length === 0) {
+            galleryItems = fallbackGalleryItems;
+        }
+
+        filterGallery();
+    }
+
+    initGallery();
 }
 
 // Reviews Slider
@@ -401,11 +408,56 @@ document.addEventListener('DOMContentLoaded', () => {
   const slider = document.getElementById('igSlider');
   const viewport = slider ? slider.querySelector('.ig-slider-viewport') : null;
   const track = document.getElementById('igSliderTrack');
-  const slides = track ? Array.from(track.querySelectorAll('.ig-slide')) : [];
   const prevBtn = document.getElementById('igSliderPrev');
   const nextBtn = document.getElementById('igSliderNext');
 
-  if (!slider || !viewport || !track || slides.length === 0) return;
+  if (!slider || !viewport || !track) return;
+
+  const instagramPosts = [
+    { code: 'DQhvSJNgDVg', url: 'https://www.instagram.com/p/DQhvSJNgDVg/' },
+    { code: 'DQUVZ7djGt1', url: 'https://www.instagram.com/p/DQUVZ7djGt1/' },
+    { code: 'DPLg6jKDOsf', url: 'https://www.instagram.com/p/DPLg6jKDOsf/' },
+    { code: 'DPGRH3gDOqG', url: 'https://www.instagram.com/p/DPGRH3gDOqG/' },
+    { code: 'DMpie-mIAOi', url: 'https://www.instagram.com/p/DMpie-mIAOi/' },
+    { code: 'DMlCpaPodFK', url: 'https://www.instagram.com/p/DMlCpaPodFK/' },
+    { code: 'DL2npJ_Ifqs', url: 'https://www.instagram.com/p/DL2npJ_Ifqs/' },
+    { code: 'DLwwgCttGBV', url: 'https://www.instagram.com/p/DLwwgCttGBV/' }
+  ];
+
+  const fallbackImages = [
+    'images/Gallery/Festivaly/Smolenice/smolenice0.jpg',
+    'images/Gallery/Festivaly/Smolenice/smolenice1.jpg',
+    'images/Gallery/Firemne/decathlon-akcia/DSC07560.png',
+    'images/hero.jpg'
+  ];
+
+  track.innerHTML = instagramPosts.map((post, index) => {
+    const primary = `https://www.instagram.com/p/${post.code}/media/?size=l`;
+    const secondary = `https://www.instagram.com/p/${post.code}/media/?size=m`;
+    const fallback = fallbackImages[index % fallbackImages.length];
+    return `
+      <a class="ig-slide" href="${post.url}" target="_blank" rel="noopener noreferrer" aria-label="Instagram post ${post.code}">
+        <img src="${primary}" data-secondary-src="${secondary}" data-fallback-src="${fallback}" alt="Instagram post ${post.code}" loading="lazy" referrerpolicy="no-referrer">
+      </a>
+    `;
+  }).join('');
+
+  track.querySelectorAll('img').forEach((img) => {
+    img.addEventListener('error', () => {
+      const triedSecondary = img.dataset.triedSecondary === '1';
+      if (!triedSecondary && img.dataset.secondarySrc) {
+        img.dataset.triedSecondary = '1';
+        img.src = img.dataset.secondarySrc;
+        return;
+      }
+      if (img.dataset.fallbackSrc) {
+        img.src = img.dataset.fallbackSrc;
+      }
+    });
+  });
+
+  const slides = Array.from(track.querySelectorAll('.ig-slide'));
+  if (slides.length === 0) return;
 
   let currentIndex = 0;
   const intervalMs = 7000;
@@ -419,12 +471,9 @@ document.addEventListener('DOMContentLoaded', () => {
       slide.classList.toggle('is-active', idx === currentIndex);
     });
 
-    const viewportRect = viewport.getBoundingClientRect();
-    const trackRect = track.getBoundingClientRect();
-    const activeRect = active.getBoundingClientRect();
-    const activeCenterFromTrackLeft = activeRect.left - trackRect.left + (activeRect.width / 2);
-    const viewportCenter = viewportRect.width / 2;
-    const targetTranslate = viewportCenter - activeCenterFromTrackLeft;
+    const viewportCenter = viewport.clientWidth / 2;
+    const activeCenter = active.offsetLeft + (active.offsetWidth / 2);
+    const targetTranslate = viewportCenter - activeCenter;
     track.style.transform = `translateX(${targetTranslate}px)`;
   }
 
@@ -442,10 +491,6 @@ document.addEventListener('DOMContentLoaded', () => {
     timer = window.setInterval(next, intervalMs);
   }
 
-  function pauseAuto() {
-    window.clearInterval(timer);
-  }
-
   prevBtn?.addEventListener('click', () => {
     goTo(currentIndex - 1);
     startAuto();
@@ -455,9 +500,6 @@ document.addEventListener('DOMContentLoaded', () => {
     next();
     startAuto();
   });
-
-  slider.addEventListener('mouseenter', pauseAuto);
-  slider.addEventListener('mouseleave', startAuto);
   window.addEventListener('resize', updatePosition);
 
   updatePosition();

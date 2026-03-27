@@ -1331,6 +1331,18 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+
+    :root {
+        --container-padding: 0.75rem;
+    }
+
+    body {
+        padding-top: 6.8rem;
+    }
+
     .ig-slider {
         grid-template-columns: 1fr;
         gap: 0.5rem;
@@ -1349,5 +1361,16 @@ a:hover {
 
     .ig-slider-btn {
         display: none;
+    }
+
+    .reviews-widget-wrap {
+        justify-content: center;
+        overflow: visible;
+    }
+
+    .reviews-widget-wrap .embedsocial-hashtag {
+        max-width: 108%;
+        transform: scale(0.92);
+        transform-origin: top center;
     }
 }

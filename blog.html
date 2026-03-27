@@ -2,237 +2,168 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ffffff">
     <title>Blog - Maľovanie na tvár</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
     <meta name="facebook-domain-verification" content="sdmwsdtaa96l3mso5uqdxcxuk2ad8a" />
+    <style>
+        .blog-hero {
+            padding: 2.5rem 0 1.25rem;
+            background: linear-gradient(180deg, #fff8f9 0%, #ffffff 55%);
+        }
+        .blog-hero .section-title {
+            margin-bottom: 0.5rem;
+        }
+        .blog-intro {
+            text-align: center;
+            color: var(--color-text-light);
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.25rem;
+            margin-bottom: 2.25rem;
+        }
+        .blog-card {
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .blog-card-content {
+            padding: 1rem;
+        }
+        .blog-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .blog-card h4 {
+            font-size: 1rem;
+            color: var(--color-primary);
+            margin-bottom: 0.6rem;
+        }
+        .blog-card p,
+        .blog-card li {
+            color: var(--color-text-light);
+            line-height: 1.65;
+            font-size: 0.98rem;
+        }
+        .blog-card ul,
+        .blog-card ol {
+            margin: 0.5rem 0 0.2rem 1.1rem;
+        }
+        .blog-footer {
+            margin-top: 1.75rem;
+            padding: 1.5rem 0 2rem;
+            text-align: center;
+            color: var(--color-text-light);
+            border-top: 1px solid var(--color-border);
+            background: var(--color-background);
+        }
+    </style>
 </head>
 <body>
-    <!-- Header and mobile menu structure will be similar to index.html -->
-    <header class="site-header">
-        <div class="container header-inner">
-            <div class="site-logo">
-                 <span class="dot"></span>
-                 Maľovanie na tvár
-            </div>
-            <button class="hamburger-menu" aria-label="Open menu">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-            </button>
-            <nav class="desktop-navigation">
-                <ul>
-                    <li><a href="index.html#sluzby">O mne</a></li>
-                    <li><a href="index.html#galeria">Moje práce</a></li>
-                    <li><a href="index.html#recenzie">Recenzie</a></li>
-                    <li><a href="index.html#cennik">Cenník</a></li>
-                    <li><a href="index.html#kontakt">Kontakt</a></li>
-                    <li><a href="index.html#faq">Otázky a odpovede</a></li>
-                     <li><a href="blog.html" class="active">Blog</a></li>
-                </ul>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Logo" class="logo-img" style="height: 90px; width: auto; vertical-align: middle; margin-right: 0.5em;">
+                    <span class="logo-text">Maľovanie na tvár</span>
+                </a>
+                <button class="menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="index.html#sluzby">Služby</a></li>
+                        <li><a href="index.html#galeria">Galéria</a></li>
+                        <li><a href="index.html#cennik">Cenník</a></li>
+                        <li><a href="index.html#recenzie">Recenzie</a></li>
+                        <li><a href="index.html#kontakt">Kontakt</a></li>
+                        <li><a href="blog.html" style="color: var(--color-primary);">BLOG</a></li>
+                        <li><a href="gift-certificate.html">Darčekový poukaz</a></li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </header>
 
-    <div class="mobile-menu-overlay"></div>
-    <nav class="mobile-navigation">
-        <ul>
-            <li><a href="index.html#sluzby">O mne</a></li>
-            <li><a href="index.html#galeria">Moje práce</a></li>
-            <li><a href="index.html#recenzie">Recenzie</a></li>
-            <li><a href="index.html#cennik">Cenník</a></li>
-            <li><a href="index.html#kontakt">Kontakt</a></li>
-            <li><a href="index.html#faq">Otázky a odpovede</a></li>
-             <li><a href="blog.html" class="active">Blog</a></li>
-        </ul>
-    </nav>
-
-    <main class="blog-page-main">
-        <section class="blog-listing">
+    <main>
+        <section class="blog-hero">
             <div class="container">
-                <h2>📝 Náš Blog 📝</h2>
-                <div class="blog-posts-list">
-
-                    <article class="blog-post-summary">
-                        <img
-                            class="blog-post-image"
-                            src="images/face2.jpg"
-                            alt="Ukážka maľovania na tvár"
-                            loading="lazy"
-                        />
-                        <h3>🎨 Organizujete oslavu a pozvali ste maľovanie na tvár?</h3>
-                        <h4>Tu je pár tipov, čo pripraviť! 🎭</h4>
-
-                        <p>
-                            Pravdepodobne si takú situáciu viete predstaviť a približne viete, ako podobné atrakcie vyzerajú.
-                            Ak však maliarka alebo maliar nemajú vlastný vybavený stánok alebo je prenášanie vybavenia náročné,
-                            myslite na tieto detaily:
-                        </p>
-
-                        <ul>
-                            <li><strong>✅ Stôl a dve stoličky</strong> – Počet stoličiek závisí od počtu maliarov. Ak nechcete, aby sa stôl znečistil, pripravte umývateľný obrus. 🖌️</li>
-                            <li><strong>☀️ Ochrana pred slnkom</strong> – Ak oslava prebieha v horúcom lete, zabezpečte slnečník alebo stan. Sedenie celý deň na priamom slnku je náročné a potenie môže spôsobiť, že obrázky sa rýchlo rozmazávajú. 🌞💦</li>
-                            <li><strong>🚰 Prístup k čistej vode</strong> – Ideálne je mať vodu hneď po ruke, aby maliari nemuseli odbiehať. TIP: Pripravte dve vedrá – jedno prázdne na špinavú vodu a jedno plné čistej. A je to! 💧🪣</li>
-                        </ul>
-
-                        <h4>💡 Zlepšováky? Sem s nimi!</h4>
-                        <p>
-                            Stôl a stoličky vo výške pracovného stola – Ak je možnosť, použite barové stoličky alebo stoličky pre vizážistov,
-                            aby maliari mohli maľovať postojačky a deti pohodlne sedeli. 💺✨
-                        </p>
-
-                        <p>
-                            S týmito tipmi bude maľovanie na tvár pohodlné pre všetkých a oslavu si užijú nielen deti, ale aj maliari!🥳🎨
-                            Ďakujem za spoluprácu. 😘
-                        </p>
+                <h1 class="section-title">Blog</h1>
+                <p class="blog-intro">Praktické tipy k organizácii akcií, rezerváciám a príprave maľovania na tvár.</p>
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <img src="images/Gallery/Festivaly/Smolenice/smolenice1.jpg" alt="Ukážka maľovania na tvár" loading="lazy">
+                        <div class="blog-card-content">
+                            <h3>Organizujete oslavu a chcete maľovanie na tvár?</h3>
+                            <h4>Krátky checklist, aby všetko prebehlo hladko</h4>
+                            <ul>
+                                <li><strong>Stôl a dve stoličky</strong> - ideálne priestor v tieni alebo pod prístreškom.</li>
+                                <li><strong>Prístup k vode</strong> - výrazne urýchli prácu počas celej akcie.</li>
+                                <li><strong>Krátka organizácia radu</strong> - deti sa striedajú plynulo a bez chaosu.</li>
+                            </ul>
+                        </div>
                     </article>
-
-                    <article class="blog-post-summary">
-                        <img
-                            class="blog-post-image"
-                            src="images/face1.jpg"
-                            alt="Ukážka maľovania na tvár"
-                            loading="lazy"
-                        />
-                        <h3>Ako si vybrať vzor?</h3>
-
-                        <p>
-                            Keďže je priam vysoko nepravdepodobné, že sa mi niekedy ozvete prostredníctvom mojich sietí alebo stránky
-                            a v podstate tvoríte malý okruh priateľov, ktorí sledujú moje aktivity nazvem vás dnes familiárne - milá mamka a milý ocko.
-                            (Prosím napíšte, že tento bol dobrý!)
-                        </p>
-
-                        <p>
-                            Na obrázku je kvapka Anastázia, ktorú som nedávno vymyslela. Aby som vám nový vzor mohla namaľovať,
-                            musíte vedieť, že existuje. Kuk rýmovačka nižšie.
-                        </p>
-
-                        <p>
-                            Pomôže nám vysvetliť to krátky rým, <br/>
-                            že ako je to s maľovaním. <br/>
-                            Priatelia, dobre viete, <br/>
-                            že u mňa šablónu nenájdete. <br/>
-                            Vzor si treba vydumať, <br/>
-                            alebo môj insta preskúmať. :)
-                        </p>
+                    <article class="blog-card">
+                        <img src="images/Gallery/Festivaly/Smolenice/smolenice3.jpg" alt="Rezervácia termínu" loading="lazy">
+                        <div class="blog-card-content">
+                            <h3>Ako prebieha rezervácia termínu?</h3>
+                            <p>Rezervácia je jednoduchá a trvá len pár minút:</p>
+                            <ol>
+                                <li>Napíš dátum, miesto a typ akcie.</li>
+                                <li>Doplníme odhad počtu detí a dĺžku programu.</li>
+                                <li>Dohodneme detaily a potvrdíme termín.</li>
+                                <li>Pred akciou pošlem krátke zhrnutie, aby bolo všetko jasné.</li>
+                            </ol>
+                        </div>
                     </article>
-
-                    <article class="blog-post-summary">
-                        <img
-                            class="blog-post-image"
-                            src="images/face3.jpg"
-                            alt="Ukážka maľovania na tvár"
-                            loading="lazy"
-                        />
-                        <h3>Ako prebieha rezervácia dátumov?</h3>
-
-                        <p>
-                            Pripravila som si krátky článok, v ktorom krok za krokom vysvetlím ako prebieha komunikácia a na čo je dôležité myslieť:
-                        </p>
-
-                        <p>
-                            Ahoj, napadlo mi vytvoriť niekoľko bodov, ktoré sa týkajú blížiacej sa jarnej a letnej sezóny.
-                        </p>
-
-                        <ol>
-                            <li>pozri si moje portfólio na webe a sociálnych sieťach</li>
-                            <li>zvoľ si pre teba najvhodnejší spôsob komunikácie (e-mail, facebook, instagram, WhatsApp, zavolaj mi), dátum, miesto a čas sú informácie, ktoré by prvá správa mala obsahovať</li>
-                            <li>premysli si poporiadku: počet detí, ktoré je potrebné zabaviť; zohľadni vek detí; na koľko hodín budeš potrebovať program; ako chceš namixovať program</li>
-                            <li>počkaj, ja sa určite ozvem (ak sa mi snažíš dovolať, ale nemôžeš ma zastihnúť pošli mi textovú správu)</li>
-                            <li>ozvala som sa! od tohto bodu Ťa povediem, skúsime skĺbiť tvoju predstavu s mojimi možnosťami</li>
-                        </ol>
-                    </article>
-
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="blog-footer">
         <div class="container">
-            <p>&copy; 2023 Maľovanie na tvár. Všetky práva vyhradené.</p>
+            <p>&copy; 2026 Maľovanie na tvár. Všetky práva vyhradené.</p>
         </div>
     </footer>
 
-    <!-- Add existing scripts from index.html if needed, adapting paths -->
     <script>
-        // Mobile menu functionality (copied from index.html)
-        const hamburger = document.querySelector('.hamburger-menu');
-        const mobileNavigation = document.querySelector('.mobile-navigation');
-        const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
         const body = document.body;
-
-        function toggleMobileMenu() {
-            body.classList.toggle('menu-open');
-        }
-
-        hamburger.addEventListener('click', toggleMobileMenu);
-        mobileOverlay.addEventListener('click', toggleMobileMenu);
-
-        // Smooth scrolling and menu closing for mobile navigation links
-        // Adjusting for links potentially going back to index.html sections
-        document.querySelectorAll('.mobile-navigation a[href]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                // Check if the link is an anchor to a section on the current page or index.html
-                const href = this.getAttribute('href');
-                const isLocalAnchor = href.startsWith('#');
-                const isIndexAnchor = href.startsWith('index.html#');
-
-                if (isLocalAnchor) {
-                     // Smooth scroll on current page (if any local anchors exist, though unlikely on blog list)
-                     e.preventDefault();
-                     const targetId = href;
-                     const targetElement = document.querySelector(targetId);
-                     if (targetElement) {
-                         targetElement.scrollIntoView({
-                             behavior: 'smooth'
-                         });
-                     }
-                 } else if (isIndexAnchor) {
-                     // Allow navigation but close menu
-                     // No preventDefault, let the browser navigate
-                 } else {
-                     // Allow navigation to other pages (like blog post links)
-                     // No preventDefault, let the browser navigate
-                 }
-
-                // Always close the mobile menu after a click
-                if (body.classList.contains('menu-open')) {
-                    // Use a small timeout to allow event propagation if needed
-                    setTimeout(() => {
-                        toggleMobileMenu();
-                    }, 150); // Adjust delay as needed
+        menuToggle?.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu?.classList.toggle('active');
+            body.style.overflow = navMenu?.classList.contains('active') ? 'hidden' : '';
+        });
+        document.querySelectorAll('.nav-list a').forEach((link) => {
+            link.addEventListener('click', () => {
+                if (navMenu?.classList.contains('active')) {
+                    menuToggle?.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    body.style.overflow = '';
                 }
             });
         });
     </script>
-
-    <script>
-        // Scroll-based Animations (copied from index.html)
-        const animateInElements = document.querySelectorAll('.animate-in');
-
-        const animateObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            rootMargin: '0px',
-            threshold: 0.1
-        });
-
-        animateInElements.forEach(element => {
-            animateObserver.observe(element);
-        });
-
-        // Mobile menu functionality (copied from index.html)
-        // ... existing code ...
-    </script>
-
 </body>
-</html> 
+</html>
