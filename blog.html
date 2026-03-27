@@ -142,7 +142,8 @@
 
     <footer class="blog-footer">
         <div class="container">
-            <p>&copy; 2026 Maľovanie na tvár. Všetky práva vyhradené.</p>
+            <p>&copy; <span class="copyright-year">2026</span> Maľovanie na tvár. Všetky práva vyhradené.</p>
+            <p class="footer-author">Autor webu: <a href="https://www.instagram.com/mircoft/" target="_blank" rel="noopener noreferrer">@Mircoft</a></p>
         </div>
     </footer>
 
@@ -163,6 +164,11 @@
                     body.style.overflow = '';
                 }
             });
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.copyright-year').forEach(function (el) {
+            el.textContent = String(new Date().getFullYear());
         });
     </script>
 </body>

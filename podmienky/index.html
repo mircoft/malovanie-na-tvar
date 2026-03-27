@@ -1,60 +1,82 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ffffff">
     <title>Podmienky používania - Maľovanie na tvár</title>
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
     <meta name="facebook-domain-verification" content="sdmwsdtaa96l3mso5uqdxcxuk2ad8a" />
 </head>
-<body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <div class="site-logo">
-                <span class="dot"></span>
-                Maľovanie na tvár
-            </div>
+<body class="legal-page">
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="logo">
+                    <img src="../images/logo.png" alt="Logo" class="logo-img" style="height: 90px; width: auto; vertical-align: middle; margin-right: 0.5em;">
+                    <span class="logo-text">Maľovanie na tvár</span>
+                </a>
+                <button class="menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="../index.html#sluzby">Služby</a></li>
+                        <li><a href="../index.html#galeria">Galéria</a></li>
+                        <li><a href="../index.html#cennik">Cenník</a></li>
+                        <li><a href="../index.html#recenzie">Recenzie</a></li>
+                        <li><a href="../index.html#kontakt">Kontakt</a></li>
+                        <li><a href="../blog.html">BLOG</a></li>
+                        <li><a href="../gift-certificate.html">Darčekový poukaz</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <main class="privacy-page-main" style="padding-top: 7.5rem;">
-        <section class="privacy-content">
-            <div class="container">
+    <main class="legal-main">
+        <div class="container">
+            <article class="legal-card">
                 <h1>Podmienky používania</h1>
-                <p>Posledná aktualizácia: [Dátum]</p>
+                <p class="legal-last-updated">Posledná aktualizácia: 27. 03. 2026</p>
 
-                <p>
-                    Využívaním tejto webstránky súhlasíte s týmito podmienkami. Táto stránka slúži na prezentáciu služieb
-                    „Maľovanie na tvár“ a na kontaktovanie poskytovateľa služieb.
-                </p>
+                <p>Používaním tejto webstránky súhlasíte s nasledovnými podmienkami. Stránka slúži na prezentáciu služieb a odosielanie dopytov na maľovanie na tvár.</p>
 
-                <h2>Kontakt a objednávky</h2>
-                <p>
-                    Objednávky a dopyty sa riešia prostredníctvom kontaktného formulára alebo priamym kontaktom.
-                    Presné podmienky pre konkrétnu akciu sa dohodnú individuálne.
-                </p>
+                <h2>Objednávky a rezervácie</h2>
+                <p>Dopyty a rezervácie prebiehajú cez kontaktný formulár, email alebo telefón. Potvrdenie termínu je platné až po vzájomnej dohode.</p>
 
-                <h2>Obsah webu</h2>
-                <p>
-                    Obsah na webe (texty, fotografie a ďalšie materiály) je chránený autorským právom.
-                    Bez súhlasu nie je povolené obsah kopírovať alebo verejne šíriť.
-                </p>
+                <h2>Ceny služieb</h2>
+                <p>Uvedené ceny sú orientačné. Konečná cena závisí od typu akcie, miesta konania, trvania programu a počtu detí.</p>
+
+                <h2>Zmeny a storno</h2>
+                <p>Ak potrebujete zmeniť alebo zrušiť termín, kontaktujte nás čo najskôr. Individuálne storno podmienky sa dohadujú pri potvrdení rezervácie.</p>
+
+                <h2>Autorské práva</h2>
+                <p>Texty, fotografie a grafické prvky na webe sú chránené autorským právom. Kopírovanie alebo šírenie bez súhlasu nie je povolené.</p>
 
                 <h2>Zodpovednosť</h2>
-                <p>
-                    Poskytovateľ nenesie zodpovednosť za škody spôsobené nesprávnym používaním webu alebo služieb.
-                </p>
+                <p>Poskytovateľ nezodpovedá za škody vzniknuté nesprávnym používaním webu alebo neúplnými údajmi uvedenými v dopyte.</p>
 
-                <h2>Kontakt pre podmienky</h2>
-                <p>
-                    Ak máte otázky k podmienkam, kontaktujte nás na: klebanovasofia@gmail.com
-                </p>
-            </div>
-        </section>
+                <h2>Kontakt</h2>
+                <p>V prípade otázok k podmienkam nás kontaktujte na <a href="mailto:klebanovasofia@gmail.com">klebanovasofia@gmail.com</a>.</p>
+            </article>
+        </div>
     </main>
+
+    <footer class="legal-footer">
+        <div class="container">
+            <p>&copy; <span class="copyright-year">2026</span> Maľovanie na tvár. Všetky práva vyhradené.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+    <script>
+        document.querySelectorAll('.copyright-year').forEach((el) => {
+            el.textContent = String(new Date().getFullYear());
+        });
+    </script>
 </body>
 </html>
-

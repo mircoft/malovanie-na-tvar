@@ -239,6 +239,27 @@ a:hover {
     margin-bottom: var(--spacing-xl);
 }
 
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.hero-cta .button-secondary {
+    background: #ffffff;
+    color: var(--color-primary);
+    border: 1px solid rgba(233, 30, 99, 0.35);
+    box-shadow: 0 6px 16px rgba(233, 30, 99, 0.12);
+}
+
+.hero-cta .button-secondary:hover {
+    background: #fff5f8;
+    color: var(--color-primary-dark);
+    border-color: rgba(233, 30, 99, 0.6);
+    box-shadow: 0 10px 22px rgba(233, 30, 99, 0.2);
+}
+
 .hero-image {
     width: 100%;
     max-width: 800px;
@@ -377,6 +398,14 @@ a:hover {
     flex-direction: column;
     align-items: center;
     margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.34s ease-out, transform 0.34s ease-out;
+}
+
+.gallery-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .gallery-item img {
@@ -388,11 +417,40 @@ a:hover {
     box-shadow: 0 2px 12px 0 rgba(233,30,99,0.10);
     display: block;
     margin: 0 auto;
+    opacity: 0;
+    filter: blur(5px);
+    transform: scale(0.98);
+    transition: opacity 0.3s ease-out, filter 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.gallery-item img.is-loaded {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
 }
 
 .load-more {
-    display: block;
-    margin: 0 auto;
+    display: inline-flex;
+    margin: 0.25rem auto 0;
+    padding: 0.8rem 1.35rem;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+    color: #fff;
+    font-weight: 600;
+    border: 1px solid rgba(233, 30, 99, 0.2);
+    box-shadow: 0 8px 20px rgba(233, 30, 99, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.load-more:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(233, 30, 99, 0.32);
+    color: #fff;
+}
+
+.load-more:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 14px rgba(233, 30, 99, 0.24);
 }
 
 /* Pricing Section */
@@ -668,6 +726,22 @@ a:hover {
     list-style: none;
 }
 
+.footer-author {
+    margin: 0.35rem 0 0;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
+
+.footer-author a {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.footer-author a:hover {
+    text-decoration: underline;
+}
+
 /* Cookie Banner */
 .cookie-banner {
     position: fixed;
@@ -915,6 +989,268 @@ a:hover {
     animation: fly 28s linear infinite 20s;
 }
 
+/* Discount popup */
+.discount-popup-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: linear-gradient(160deg, rgba(36, 18, 32, 0.56), rgba(20, 16, 26, 0.5));
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.discount-popup-card {
+    width: min(92vw, 420px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 2rem 1.4rem 1.25rem;
+    text-align: center;
+    position: relative;
+    background:
+      radial-gradient(120% 140% at 100% 0%, rgba(248, 143, 177, 0.2) 0%, rgba(248, 143, 177, 0) 48%),
+      radial-gradient(120% 120% at 0% 100%, rgba(233, 30, 99, 0.12) 0%, rgba(233, 30, 99, 0) 50%),
+      rgba(255, 255, 255, 0.96);
+    box-shadow:
+      0 20px 44px rgba(25, 18, 37, 0.26),
+      0 8px 18px rgba(233, 30, 99, 0.16);
+}
+
+.discount-popup-close {
+    position: absolute;
+    top: 0.65rem;
+    right: 0.75rem;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 9999px;
+    background: transparent;
+    color: #d81b60;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.discount-popup-close:hover {
+    background: rgba(216, 27, 96, 0.1);
+    transform: scale(1.05);
+}
+
+.discount-popup-title {
+    color: #d81b60;
+    margin-bottom: 0.45rem;
+    font-size: clamp(1.9rem, 4.2vw, 2.25rem);
+    line-height: 1.15;
+}
+
+.discount-popup-text {
+    margin: 0 auto 1rem;
+    max-width: 32ch;
+    color: #4e4e58;
+    font-size: 1.05rem;
+    line-height: 1.45;
+}
+
+.discount-popup-input {
+    width: 100%;
+    padding: 0.78rem 0.95rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid rgba(216, 27, 96, 0.22);
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.discount-popup-input:focus {
+    outline: none;
+    border-color: rgba(216, 27, 96, 0.65);
+    box-shadow: 0 0 0 4px rgba(216, 27, 96, 0.12);
+}
+
+.discount-popup-submit {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    background: linear-gradient(135deg, #e91e63 0%, #d81b60 55%, #c2185b 100%);
+    box-shadow: 0 10px 22px rgba(216, 27, 96, 0.32);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease, opacity 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    min-height: 3rem;
+}
+
+.discount-popup-submit:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(216, 27, 96, 0.38);
+    filter: saturate(1.04);
+}
+
+.discount-popup-submit:disabled {
+    cursor: wait;
+    opacity: 0.95;
+    transform: none;
+    filter: none;
+}
+
+.discount-popup-submit-spinner {
+    display: none;
+    width: 1.15rem;
+    height: 1.15rem;
+    flex-shrink: 0;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: discount-popup-spin 0.7s linear infinite;
+}
+
+.discount-popup-submit.is-busy .discount-popup-submit-spinner {
+    display: block;
+}
+
+.discount-popup-form.is-loading .discount-popup-input {
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+.discount-popup-form.is-sent .discount-popup-input,
+.discount-popup-form.is-sent .discount-popup-submit {
+    display: none;
+}
+
+.discount-popup-status {
+    min-height: 3rem;
+    margin-top: 0.75rem;
+    font-size: 0.94rem;
+    line-height: 1.4;
+}
+
+.discount-popup-status-msg {
+    display: block;
+    animation: discount-popup-status-in 0.4s ease;
+}
+
+.discount-popup-status--pending {
+    color: #6b6b76;
+}
+
+.discount-popup-status--ok {
+    color: #1b5e20;
+    font-weight: 600;
+}
+
+.discount-popup-status--err {
+    color: #c62828;
+    font-weight: 500;
+}
+
+.discount-popup-card.is-success {
+    animation: discount-popup-success 0.55s ease;
+}
+
+@keyframes discount-popup-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes discount-popup-status-in {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes discount-popup-success {
+    0% {
+        transform: scale(1);
+    }
+    45% {
+        transform: scale(1.03);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Legal pages (privacy / terms) */
+.legal-page {
+    background: linear-gradient(180deg, #fff8f9 0%, #ffffff 55%);
+}
+
+.legal-main {
+    padding: 2.2rem 0 2.8rem;
+}
+
+.legal-card {
+    max-width: 920px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    box-shadow: 0 14px 34px rgba(233, 30, 99, 0.1);
+    padding: 1.8rem 1.4rem;
+}
+
+.legal-card h1 {
+    margin-bottom: 0.45rem;
+}
+
+.legal-last-updated {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1.1rem;
+}
+
+.legal-card h2 {
+    margin-top: 1.25rem;
+    margin-bottom: 0.55rem;
+    font-size: 1.3rem;
+    color: var(--color-primary-dark);
+}
+
+.legal-card h3 {
+    margin-top: 0.95rem;
+    margin-bottom: 0.45rem;
+    font-size: 1.08rem;
+}
+
+.legal-card p,
+.legal-card li {
+    color: #4b4b56;
+    line-height: 1.7;
+}
+
+.legal-card ul,
+.legal-card ol {
+    margin: 0.45rem 0 0.8rem 1.15rem;
+}
+
+.legal-footer {
+    border-top: 1px solid var(--color-border);
+    padding: 1.4rem 0 2rem;
+    color: var(--color-text-light);
+    text-align: center;
+    background: #fff;
+}
+
 /* Gift Certificate Section */
 .gift-certificate-section {
     padding: var(--spacing-xxl) 0;
@@ -1008,6 +1344,26 @@ a:hover {
     border-radius: 2rem;
     text-align: center;
     gap: 0.5em;
+}
+
+.gift-stripe-heading {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #c2185b;
+    text-align: center;
+}
+
+.gift-stripe-lead {
+    max-width: 36rem;
+    margin: 0 auto 1rem;
+    text-align: center;
+    font-size: 0.98rem;
+    color: var(--color-text-light);
+}
+
+.gift-option-card stripe-buy-button {
+    display: block;
+    margin-top: 0.5rem;
 }
 
 .how-to-redeem {
@@ -1235,9 +1591,9 @@ a:hover {
     }
 }
 
-/* Instagram horizontal auto slider */
+/* Instagram: horizontálny carousel + oficiálne embedy */
 .ig-slider {
-    margin-top: 1.75rem;
+    margin-top: 1.5rem;
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 0.75rem;
@@ -1247,7 +1603,8 @@ a:hover {
 .ig-slider-viewport {
     overflow: hidden;
     width: 100%;
-    padding: 1.25rem 0.75rem;
+    padding: 1.25rem 0.5rem;
+    min-height: 520px;
 }
 
 .ig-slider-track {
@@ -1259,47 +1616,91 @@ a:hover {
 }
 
 .ig-slide {
-    min-width: 190px;
-    width: 190px;
-    height: 300px;
-    margin-left: -34px;
+    flex-shrink: 0;
+    width: 280px;
+    margin-left: -36px;
     border-radius: 18px;
-    overflow: hidden;
-    display: block;
     position: relative;
-    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
-    transform: scale(0.84);
-    opacity: 0.65;
-    filter: saturate(0.9);
-    transition: transform 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
     z-index: 1;
+    transform: scale(0.82);
+    opacity: 0.66;
+    filter: saturate(0.92);
+    transition: transform 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
 }
 
 .ig-slide:first-child {
     margin-left: 0;
 }
 
-.ig-slide img {
+/* Viditeľné „okno“ len s obsahom – hlavička aj pätička Instagramu sa orežú (iframe nevieme upraviť zvnútra) */
+.ig-slide-embed {
+    --ig-crop-top: 80px;
+    --ig-crop-bottom: 175px;
+    --ig-viewport-height: 430px;
+    --ig-clip-bottom: 18px;
+    position: relative;
     width: 100%;
+    height: var(--ig-viewport-height);
+    max-height: none;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.14);
+    background: #f5f5f5;
+    pointer-events: auto;
+    isolation: isolate;
+    /* Doplnkový orez spodného okraja (logo / lišta) – rovnaká logika ako zhora cez výšku + translate */
+    clip-path: inset(0 0 var(--ig-clip-bottom) 0 round 18px);
+}
+
+.ig-slide-embed .instagram-media {
+    position: static;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    width: 100% !important;
     height: 100%;
-    object-fit: cover;
-    display: block;
+    min-height: 0;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.ig-slide-embed iframe {
+    position: absolute !important;
+    left: 50% !important;
+    top: 0 !important;
+    transform: translateX(-50%) translateY(calc(-1 * var(--ig-crop-top))) !important;
+    width: 108% !important;
+    max-width: 380px !important;
+    min-width: 260px !important;
+    /* Výška iframe = viditeľné okno + orez hore + orez dole (spodný pás sa schová cez overflow + clip-path) */
+    height: calc(var(--ig-viewport-height) + var(--ig-crop-top) + var(--ig-crop-bottom)) !important;
+    min-height: calc(var(--ig-viewport-height) + var(--ig-crop-top) + var(--ig-crop-bottom)) !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
 }
 
 .ig-slide.is-active {
-    transform: scale(1.08);
+    transform: scale(1.06);
     opacity: 1;
-    z-index: 3;
+    z-index: 4;
     filter: saturate(1);
-    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.22);
+}
+
+.ig-slide.is-active .ig-slide-embed {
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
 }
 
 .ig-slide:hover {
-    transform: scale(1.14);
+    z-index: 5;
     opacity: 1;
-    z-index: 4;
-    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.26);
-    filter: saturate(1.05);
+    filter: saturate(1.02);
+}
+
+.ig-slide:not(.is-active):hover {
+    transform: scale(0.88);
 }
 
 .ig-slider-btn {
@@ -1323,13 +1724,6 @@ a:hover {
     box-shadow: 0 8px 22px rgba(233, 30, 99, 0.16);
 }
 
-.ig-slider-hint {
-    margin-top: 0.75rem;
-    text-align: center;
-    color: var(--color-text-light);
-    font-size: 0.95rem;
-}
-
 @media (max-width: 768px) {
     html {
         font-size: 15px;
@@ -1350,13 +1744,29 @@ a:hover {
 
     .ig-slider-viewport {
         padding: 0.5rem 0;
+        min-height: 480px;
+        order: -1;
     }
 
     .ig-slide {
-        min-width: 150px;
-        width: 150px;
-        height: 240px;
-        margin-left: -24px;
+        width: 240px;
+        margin-left: -28px;
+        border-radius: 30px;
+    }
+
+    .ig-slide:first-child {
+        margin-left: 0;
+    }
+
+    .ig-slide-embed {
+        --ig-crop-top: 72px;
+        --ig-crop-bottom: 155px;
+        --ig-viewport-height: 400px;
+        --ig-clip-bottom: 14px;
+        --ig-corner-radius: 30px;
+        border-radius: var(--ig-corner-radius);
+        /* Zladený orez s väčším zaoblením (inak clip-path „usekne“ rohy hranato) */
+        clip-path: inset(0 0 var(--ig-clip-bottom) 0 round var(--ig-corner-radius));
     }
 
     .ig-slider-btn {

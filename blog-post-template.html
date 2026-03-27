@@ -81,7 +81,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Maľovanie na tvár. Všetky práva vyhradené.</p>
+            <p>&copy; <span class="copyright-year">2026</span> Maľovanie na tvár. Všetky práva vyhradené.</p>
         </div>
     </footer>
 
@@ -136,6 +136,10 @@
                     }, 150); // Adjust delay as needed
                 }
             });
+        });
+
+        document.querySelectorAll('.copyright-year').forEach((el) => {
+            el.textContent = String(new Date().getFullYear());
         });
     </script>
 </body>
